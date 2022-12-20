@@ -27,6 +27,7 @@
   "paths": {
     "/v1/connect/digital-rights/pick-up": {
       "post": {
+        "description": "The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
         "tags": [
           "DigitalRights"
         ],
@@ -75,6 +76,7 @@
     },
     "/v1/connect/digital-rights/drop-off": {
       "post": {
+        "description": "The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
         "tags": [
           "DigitalRights"
         ],
@@ -123,6 +125,7 @@
     },
     "/v1/connect/digital-rights/{digitalRightId}": {
       "put": {
+        "description": "The purpose of the “Update Digital Handover Right” call is to change a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM. By updating this D.R., the integrator can indicate a status transition (for example confirm a handover) and/or update the content (for example the underlying cargo objects and their formation).",
         "tags": [
           "DigitalRights"
         ],
