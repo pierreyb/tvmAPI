@@ -1,1766 +1,886 @@
 {
-   "openapi":"3.0.1",
-   "info":{
-      "title":"Truck Visit Management",
-      "description":"This document contains the functional and technical specifications of the Truck Visit Management API. The API calls are designed to facilitate the Truck Visit Management’s Freight Management scope, which is limited to the Digital Handover Right creation and update process.",
-      "termsOfService":"https://www.nallian.com/",
-      "version":"v1"
-   },
-   "servers":[
-      {
-         "url":"https://{community}-prd.nallian.io/api/tvm",
-         "description":"PRD - Production Environment",
-         "variables":{
-            "community":{
-               "enum":[
-                  "tenant1",
-                  "tenant2"
-               ],
-               "default":"tenant1",
-               "description":"Nallian has multiple domains for every application, specified by the community/tenant."
-            }
-         }
-      },
-      {
-         "url":"https://{community}-stg.nallian.io/api/tvm",
-         "description":"STG - Staging Environment",
-         "variables":{
-            "community":{
-               "enum":[
-                  "demo"
-               ],
-               "default":"demo",
-               "description":"Nallian has multiple domains for every application, specified by the community/tenant."
-            }
-         }
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Truck Visit Management",
+    "description": "This document contains the functional and technical specifications of the Truck Visit Management API. The API calls are designed to facilitate the Truck Visit Management’s Freight Management scope, which is limited to the Digital Handover Right creation and update process.",
+    "termsOfService": "https://www.nallian.com/",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://{community}-prd.nallian.io/api/tvm",
+      "description": "PRD - Production Environment",
+      "variables": {
+        "community": {
+          "enum": [
+            "tenant1",
+            "tenant2"
+          ],
+          "default": "tenant1",
+          "description": "Nallian has multiple domains for every application, specified by the community/tenant."
+        }
       }
-   ],
-   "paths":{
-      "/v1/connect/digital-rights/pick-up":{
-         "post":{
-            "description":"The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
-            "tags":[
-               "DigitalRights"
-            ],
-            "requestBody":{
-               "description":"",
-               "content":{
-                  "application/json":{
-                     "schema":{
-                        "$ref":"#/components/schemas/Public.Rights.Requests.CreateRightRequest"
-                     }
-                  }
-               }
-            },
-            "responses":{
-               "202":{
-                  "description":"Accepted",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "$ref":"#/components/schemas/Public.Rights.Responses.CreateRightResponse"
-                        }
-                     }
-                  }
-               },
-               "400":{
-                  "description":"Bad Request",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "$ref":"#/components/schemas/Common.Error"
-                           }
-                        }
-                     }
-                  }
-               },
-               "403":{
-                  "description":"Forbidden"
-               },
-               "404":{
-                  "description":"No relation found for provided Actors"
-               }
-            }
-         }
-      },
-      "/v1/connect/digital-rights/drop-off":{
-         "post":{
-            "description":"The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
-            "tags":[
-               "DigitalRights"
-            ],
-            "requestBody":{
-               "description":"",
-               "content":{
-                  "application/json":{
-                     "schema":{
-                        "$ref":"#/components/schemas/Public.Rights.Requests.CreateRightRequest"
-                     }
-                  }
-               }
-            },
-            "responses":{
-               "202":{
-                  "description":"Accepted",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "$ref":"#/components/schemas/Public.Rights.Responses.CreateRightResponse"
-                        }
-                     }
-                  }
-               },
-               "400":{
-                  "description":"Bad Request",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "$ref":"#/components/schemas/Common.Error"
-                           }
-                        }
-                     }
-                  }
-               },
-               "403":{
-                  "description":"Forbidden"
-               },
-               "404":{
-                  "description":"No relation found for provided Actors"
-               }
-            }
-         }
-      },
-      "/v1/connect/digital-rights/{digitalRightId}":{
-         "put":{
-            "description":"The purpose of the “Update Digital Handover Right” call is to change a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM. By updating this D.R., the integrator can indicate a status transition (for example confirm a handover) and/or update the content (for example the underlying cargo objects and their formation).",
-            "tags":[
-               "DigitalRights"
-            ],
-            "parameters":[
-               {
-                  "name":"digitalRightId",
-                  "in":"path",
-                  "description":"Id of digital right that is updated",
-                  "required":true,
-                  "schema":{
-                     "type":"string",
-                     "format":"uuid"
-                  }
-               }
-            ],
-            "requestBody":{
-               "description":"",
-               "content":{
-                  "application/json":{
-                     "schema":{
-                        "$ref":"#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
-                     }
-                  }
-               }
-            },
-            "responses":{
-               "202":{
-                  "description":"Accepted. No body"
-               },
-               "400":{
-                  "description":"Bad Request",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "$ref":"#/components/schemas/Common.Error"
-                           }
-                        }
-                     }
-                  }
-               },
-               "403":{
-                  "description":"Forbidden"
-               },
-               "404":{
-                  "description":"Message validation error"
-               }
-            }
-         }
-      },
-      "/v1/connect/identification/capacity-bookers":{
-         "get":{
-            "description":"The purpose of the “Get Capacity Bookers” call is to retrieve a list of identification codes for all known Capacity Bookers (truckers, forwarders, etc..) who are allowed to pick-up/drop-off cargo handover rights using TVM in a specific community/station (tenant). This list will provide a universal identification method & value for every capacity booker which can be used to identify organizations between the two integrating systems.",
-            "tags":[
-               "CapacityBookers"
-            ],
-            "responses":{
-               "200":{
-                  "description":"Success",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "$ref":"#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
-                           }
-                        }
-                     }
-                  }
-               },
-               "403":{
-                  "description":"Forbidden"
-               }
-            }
-         }
-      },
-      "/v1/connect/identification/capacity-suppliers":{
-         "get":{
-            "tags":[
-               "CapacitySuppliers"
-            ],
-            "responses":{
-               "200":{
-                  "description":"Success",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "$ref":"#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
-                           }
-                        }
-                     }
-                  }
-               },
-               "403":{
-                  "description":"Forbidden"
-               }
-            }
-         }
-      },
-      "/v1/connect/lookups/digital-right-states":{
-         "get":{
-            "description":"Provide a list of digital right state and their corresponding name.",
-            "tags":[
-               "Lookup"
-            ],
-            "responses":{
-               "200":{
-                  "description":"Success",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "type":"object",
-                              "properties":{
-                                 "id":{
-                                    "type":"integer"
-                                 },
-                                 "name":{
-                                    "type":"string",
-                                    "nullable":true
-                                 }
-                              }
-                           }
-                        },
-                        "example":[
-                           {
-                              "id":22,
-                              "name":"Expected"
-                           },
-                           {
-                              "id":23,
-                              "name":"Temporarily blocked"
-                           },
-                           {
-                              "id":24,
-                              "name":"Available for handover"
-                           },
-                           {
-                              "id":25,
-                              "name":"Unavailable/void"
-                           },
-                           {
-                              "id":26,
-                              "name":"Handover complete"
-                           }
-                        ]
-                     }
-                  }
-               }
-            }
-         }
-      },
-      "/v1/connect/lookups/digital-right-types":{
-         "get":{
-            "description":"Provide a list of digital right type and their corresponding name.",
-            "tags":[
-               "Lookup"
-            ],
-            "responses":{
-               "200":{
-                  "description":"Success",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "type":"object",
-                              "properties":{
-                                 "id":{
-                                    "type":"integer"
-                                 },
-                                 "name":{
-                                    "type":"string",
-                                    "nullable":true
-                                 }
-                              }
-                           }
-                        },
-                        "example":[
-                           {
-                              "id": 13,
-                              "name": "Intact Uld"
-                           },
-                           {
-                              "id": 14,
-                              "name": "Loose Cargo"
-                           },
-                           {
-                              "id": 15,
-                              "name": "Pallet Stack"
-                           }
-                        ]
-                     }
-                  }
-               }
-            }
-         }
-      },
-      "/v1/connect/lookups/handover-types":{
-         "get":{
-            "description":"Provide a list of digital handover right type and their corresponding name.",
-            "tags":[
-               "Lookup"
-            ],
-            "responses":{
-               "200":{
-                  "description":"Success",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "type":"object",
-                              "properties":{
-                                 "id":{
-                                    "type":"integer"
-                                 },
-                                 "name":{
-                                    "type":"string",
-                                    "nullable":true
-                                 }
-                              }
-                           }
-                        },
-                        "example":[
-                           {
-                              "id": 11,
-                              "name": "Pick-up"
-                           },
-                           {
-                              "id": 12,
-                              "name": "Delivery"
-                           }
-                        ]
-                     }
-                  }
-               }
-            }
-         }
+    },
+    {
+      "url": "https://{community}-stg.nallian.io/api/tvm",
+      "description": "STG - Staging Environment",
+      "variables": {
+        "community": {
+          "enum": [
+            "demo"
+          ],
+          "default": "demo",
+          "description": "Nallian has multiple domains for every application, specified by the community/tenant."
+        }
       }
-   },
-   "components":{
-      "schemas":{
-         "Common.Error":{
-            "type":"object",
-            "properties":{
-               "code":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "key":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "errors":{
-                  "type":"array",
-                  "items":{
-                     "type":"string"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Responses.DigitalRightDetailResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "typeName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "reference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "totalWeight":{
-                  "type":"number",
-                  "format":"double"
-               },
-               "totalPieces":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "volume":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "length":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "width":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "height":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "assigneeId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "assigneeName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "holderId":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "holderName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "capacitySupplierId":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "supplierName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "lastEventSource":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "lastEventOn":{
-                  "type":"string",
-                  "format":"date-time"
-               },
-               "stateName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "stateColor":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "isLinked":{
-                  "type":"boolean"
-               },
-               "actions":{
-                  "$ref":"#/components/schemas/DigitalRights.Subclasses.DigitalRightActions"
-               },
-               "shipments":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/DigitalRights.Subclasses.AirShipmentDetailItem"
-                  },
-                  "nullable":true
-               },
-               "ulds":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/DigitalRights.Subclasses.UldDetailItem"
-                  },
-                  "nullable":true
-               },
-               "handOverTypeName":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Responses.DigitalRightEventResponse":{
-            "type":"object",
-            "properties":{
-               "digitalRightId":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "digitalRightStateId":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "eventTypeId":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "eventSeverityId":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "organisationId":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "organisationName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "eventTypeName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "eventSeverityName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "createdOn":{
-                  "type":"string",
-                  "format":"date-time"
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Responses.DigitalRightEventTypeResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Responses.DigitalRightOverviewItemResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "typeName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "reference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "totalWeight":{
-                  "type":"number",
-                  "format":"double"
-               },
-               "totalPieces":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "volume":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "length":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "width":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "height":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "assigneeId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "assigneeName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "holderId":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "holderName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "capacitySupplierId":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "supplierName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "lastEventSource":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "lastEventOn":{
-                  "type":"string",
-                  "format":"date-time"
-               },
-               "stateName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "stateColor":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "isLinked":{
-                  "type":"boolean"
-               },
-               "actions":{
-                  "$ref":"#/components/schemas/DigitalRights.Subclasses.DigitalRightActions"
-               },
-               "shipments":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/DigitalRights.Subclasses.AirShipmentOverviewItem"
-                  },
-                  "nullable":true
-               },
-               "ulds":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/DigitalRights.Subclasses.UldOverviewItem"
-                  },
-                  "nullable":true
-               },
-               "bookingId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.AirShipmentDetailItem":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "pieces":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "weight":{
-                  "type":"number",
-                  "format":"double"
-               },
-               "mawb":{
-                  "$ref":"#/components/schemas/DigitalRights.Subclasses.MawbDetailItem"
-               },
-               "sphs":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Lookups.Responses.SphResponse"
-                  },
-                  "nullable":true
-               },
-               "externalReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "volume":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "length":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "width":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "height":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "description":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "hawbs":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/DigitalRights.Subclasses.HawbDetailItem"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.AirShipmentOverviewItem":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "pieces":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "mawbNumber":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.DigitalRightActions":{
-            "type":"object",
-            "properties":{
-               "canLink":{
-                  "type":"boolean"
-               },
-               "canUnlink":{
-                  "type":"boolean"
-               },
-               "canSplit":{
-                  "type":"boolean"
-               },
-               "canDelegate":{
-                  "type":"boolean"
-               },
-               "canRefuse":{
-                  "type":"boolean"
-               },
-               "canRetract":{
-                  "type":"boolean"
-               },
-               "canArchive":{
-                  "type":"boolean"
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.DigitalRightInputErrorItemResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "createdOn":{
-                  "type":"string",
-                  "format":"date-time"
-               },
-               "fileTypeId":{
-                  "$ref":"#/components/schemas/Enums.FileType"
-               },
-               "fileTypeName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "canBeReprocessed":{
-                  "type":"boolean"
-               },
-               "error":{
-                  "$ref":"#/components/schemas/DigitalRights.Subclasses.ErrorDetailsResponse"
-               },
-               "digitalRightId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "correlationId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "groupedInputFiles":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/DigitalRights.Subclasses.DigitalRightInputErrorItemResponse"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.ErrorDetailsResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "canBeResolved":{
-                  "type":"boolean"
-               },
-               "isResolved":{
-                  "type":"boolean"
-               },
-               "errorType":{
-                  "$ref":"#/components/schemas/Enums.ErrorType"
-               },
-               "errorTypeCode":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "errorTypeDescription":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.HawbDetailItem":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "hawbNumber":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "origin":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "destination":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "pieces":{
-                  "type":"integer",
-                  "format":"int32",
-                  "nullable":true
-               },
-               "weight":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "sphs":{
-                  "type":"array",
-                  "items":{
-                     "type":"string"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.MawbDetailItem":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "origin":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "destination":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "number":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "carrierName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "carrierId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "agentName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "agentId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "externalReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "pieces":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "weight":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "sphs":{
-                  "type":"array",
-                  "items":{
-                     "type":"string"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.UldDetailItem":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "externalReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "code":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "typeName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "ownerName":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "isPallet":{
-                  "type":"boolean"
-               },
-               "volume":{
-                  "type":"number",
-                  "format":"double"
-               },
-               "weight":{
-                  "type":"number",
-                  "format":"double"
-               }
-            },
-            "additionalProperties":false
-         },
-         "DigitalRights.Subclasses.UldOverviewItem":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "externalReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "uldReference":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Enums.ErrorType":{
-            "enum":[
-               1,
-               2,
-               3,
-               4,
-               5,
-               6,
-               7,
-               8,
-               9,
-               10,
-               11,
-               12,
-               13,
-               14,
-               15,
-               16
-            ],
-            "type":"integer",
-            "format":"int32"
-         },
-         "Enums.FileType":{
-            "enum":[
-               1,
-               2
-            ],
-            "type":"integer",
-            "format":"int32"
-         },
-         "IdentificationCodes.Enums.IdentificationType":{
-            "enum":[
-               1,
-               2,
-               3
-            ],
-            "type":"integer",
-            "format":"int32"
-         },
-         "IdentificationCodes.Requests.CreateIdentificationCodeRequest":{
-            "type":"object",
-            "properties":{
-               "identificationType":{
-                  "$ref":"#/components/schemas/IdentificationCodes.Enums.IdentificationType"
-               },
-               "value":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "organisationId":{
-                  "type":"string",
-                  "format":"uuid"
-               }
-            },
-            "additionalProperties":false
-         },
-         "IdentificationCodes.Requests.GetIdentificationCodeOverviewRequest":{
-            "type":"object",
-            "properties":{
-               "page":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "pageSize":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "sort":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "includeArchived":{
-                  "type":"boolean",
-                  "nullable":true
-               },
-               "identificationType":{
-                  "$ref":"#/components/schemas/IdentificationCodes.Enums.IdentificationType"
-               },
-               "value":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "IdentificationCodes.Requests.UpdateIdentificationCodeRequest":{
-            "type":"object",
-            "properties":{
-               "identificationType":{
-                  "$ref":"#/components/schemas/IdentificationCodes.Enums.IdentificationType"
-               },
-               "value":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "organisationId":{
-                  "type":"string",
-                  "format":"uuid"
-               }
-            },
-            "additionalProperties":false
-         },
-         "IdentificationCodes.Responses.IdentificationCodeResponse":{
-            "type":"object",
-            "properties":{
-               "identificationType":{
-                  "$ref":"#/components/schemas/IdentificationCodes.Enums.IdentificationType"
-               },
-               "value":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "organisationResponse":{
-                  "$ref":"#/components/schemas/Organisations.Responses.OrganisationResponse"
-               },
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               }
-            },
-            "additionalProperties":false
-         },
-         "Lookups.Responses.HandoverTypeDirectionResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Lookups.Responses.SphResponse":{
-            "type":"object",
-            "properties":{
-               "code":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "description":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Lookups.Responses.UldTypeResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Organisations.Responses.GetByDelegateHolderResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "organisationId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Organisations.Responses.GetOrganisationsResponse":{
-            "type":"object",
-            "properties":{
-               "organisationId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "isDelegableHolder":{
-                  "type":"boolean"
-               },
-               "roles":{
-                  "type":"array",
-                  "items":{
-                     "type":"integer",
-                     "format":"int32"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Organisations.Responses.OrganisationResponse":{
-            "type":"object",
-            "properties":{
-               "organisationId":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Organisations.Responses.OrganisationWithIdentificationCodesResponse":{
-            "type":"object",
-            "properties":{
-               "nallianId":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "city":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "country":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "identificationCodes":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Organisations.Subclasses.IdentificationCode"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Organisations.Subclasses.IdentificationCode":{
-            "type":"object",
-            "properties":{
-               "type":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "value":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Organisations.Subclasses.OrganisationBase":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid"
-               },
-               "organisationId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Actors.Request.ActorRequest":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               },
-               "iataNumericCode":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "nallianId":{
-                  "type":"string",
-                  "format":"uuid",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.AirShipments.Requests.AirShipmentRequest":{
-            "type":"object",
-            "properties":{
-               "shipmentReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "description":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "flights":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Public.Flights.Requests.FlightRequest"
-                  },
-                  "nullable":true
-               },
-               "volume":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "length":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "height":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "width":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "sphs":{
-                  "type":"array",
-                  "items":{
-                     "type":"string"
-                  },
-                  "nullable":true
-               },
-               "pieces":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "weight":{
-                  "type":"number",
-                  "format":"double"
-               },
-               "extraInformation":{
-                  "$ref":"#/components/schemas/Public.AirShipments.Requests.ExtraInformationRequest"
-               },
-               "mawb":{
-                  "$ref":"#/components/schemas/Public.Mawbs.Requests.MawbRequest"
-               },
-               "hawbs":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Public.Hawbs.Requests.HawbRequest"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.AirShipments.Requests.ExtraInformationRequest":{
-            "type":"object",
-            "properties":{
-               "chargesPayed":{
-                  "type":"boolean"
-               },
-               "customsReleased":{
-                  "type":"boolean"
-               },
-               "readyForRelease":{
-                  "type":"boolean"
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Enums.RoleType":{
-            "enum":[
-               1,
-               2,
-               3,
-               4,
-               5,
-               6,
-               7,
-               8
-            ],
-            "type":"integer",
-            "format":"int32"
-         },
-         "Public.Errors.Responses.ErrorResponse":{
-            "type":"object",
-            "properties":{
-               "code":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "message":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Flights.Requests.FlightRequest":{
-            "required":[
-               "flightNumber"
-            ],
-            "type":"object",
-            "properties":{
-               "sta":{
-                  "type":"string",
-                  "format":"date-time",
-                  "nullable":true
-               },
-               "std":{
-                  "type":"string",
-                  "format":"date-time",
-                  "nullable":true
-               },
-               "flightNumber":{
-                  "type":"string"
-               },
-               "destination":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "origin":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "carrier":{
-                  "$ref":"#/components/schemas/Public.Actors.Request.ActorRequest"
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Hawbs.Requests.HawbRequest":{
-            "type":"object",
-            "properties":{
-               "hawbNumber":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "origin":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "destination":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "pieces":{
-                  "type":"integer",
-                  "format":"int32",
-                  "nullable":true
-               },
-               "weight":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "sphs":{
-                  "type":"array",
-                  "items":{
-                     "type":"string"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Lookups.Responses.ActorTypeResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Mawbs.Requests.MawbRequest":{
-            "type":"object",
-            "properties":{
-               "mawbNumber":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "origin":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "destination":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "externalReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "pieces":{
-                  "type":"integer",
-                  "format":"int32",
-                  "nullable":true
-               },
-               "weight":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "sphs":{
-                  "type":"array",
-                  "items":{
-                     "type":"string"
-                  },
-                  "nullable":true
-               },
-               "agent":{
-                  "$ref":"#/components/schemas/Public.Actors.Request.ActorRequest"
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Rights.Requests.CreateRightRequest":{
-            "type":"object",
-            "properties":{
-               "externalReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "rightState":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "rightType":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "handoverType":{
-                  "type":"integer",
-                  "format":"int32",
-                  "nullable":true
-               },
-               "totalPieces":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "totalWeight":{
-                  "type":"number",
-                  "format":"double"
-               },
-               "volume":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "length":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "height":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "width":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "tags":{
-                  "type":"array",
-                  "items":{
-                     "type":"integer",
-                     "format":"int32"
-                  },
-                  "nullable":true
-               },
-               "assignee":{
-                  "$ref":"#/components/schemas/Public.Actors.Request.ActorRequest"
-               },
-               "capacitySupplier":{
-                  "$ref":"#/components/schemas/Public.Actors.Request.ActorRequest"
-               },
-               "airShipments":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
-                  },
-                  "nullable":true
-               },
-               "ulds":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Public.Ulds.Requests.UldRequest"
-                  },
-                  "nullable":true
-               },
-               "viewers":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Public.Actors.Request.ActorRequest"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Rights.Requests.UpdateRightRequest":{
-            "type":"object",
-            "properties":{
-               "externalReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "rightState":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "totalPieces":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "totalWeight":{
-                  "type":"number",
-                  "format":"double"
-               },
-               "volume":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "length":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "height":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "width":{
-                  "type":"number",
-                  "format":"double",
-                  "nullable":true
-               },
-               "tags":{
-                  "type":"array",
-                  "items":{
-                     "type":"integer",
-                     "format":"int32"
-                  },
-                  "nullable":true
-               },
-               "viewers":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Public.Actors.Request.ActorRequest"
-                  },
-                  "nullable":true
-               },
-               "airShipments":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
-                  },
-                  "nullable":true
-               },
-               "ulds":{
-                  "type":"array",
-                  "items":{
-                     "$ref":"#/components/schemas/Public.Ulds.Requests.UldRequest"
-                  },
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Rights.Responses.CreateRightResponse":{
-            "type":"object",
-            "properties":{
-               "rightId":{
-                  "type":"string",
-                  "format":"uuid"
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Ulds.Requests.UldRequest":{
-            "type":"object",
-            "properties":{
-               "externalReference":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "uldSerialNumber":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "prefix":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "uldCode":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "uldType":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "owner":{
-                  "$ref":"#/components/schemas/Public.Actors.Request.ActorRequest"
-               },
-               "isPallet":{
-                  "type":"boolean"
-               }
-            },
-            "additionalProperties":false
-         }
+    }
+  ],
+  "paths": {
+    "/v1/connect/digital-rights/pick-up": {
+      "post": {
+        "description": "The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
+        "tags": [
+          "DigitalRights"
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Common.Error"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "No relation found for provided Actors"
+          }
+        }
       }
-   }
+    },
+    "/v1/connect/digital-rights/drop-off": {
+      "post": {
+        "description": "The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
+        "tags": [
+          "DigitalRights"
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Common.Error"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "No relation found for provided Actors"
+          }
+        }
+      }
+    },
+    "/v1/connect/digital-rights/{digitalRightId}": {
+      "put": {
+        "description": "The purpose of the “Update Digital Handover Right” call is to change a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM. By updating this D.R., the integrator can indicate a status transition (for example confirm a handover) and/or update the content (for example the underlying cargo objects and their formation).",
+        "tags": [
+          "DigitalRights"
+        ],
+        "parameters": [
+          {
+            "name": "digitalRightId",
+            "in": "path",
+            "description": "Id of digital right that is updated",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted. No body"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Common.Error"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Message validation error"
+          }
+        }
+      }
+    },
+    "/v1/connect/identification/capacity-bookers": {
+      "get": {
+        "description": "The purpose of the “Get Capacity Bookers” call is to retrieve a list of identification codes for all known Capacity Bookers (truckers, forwarders, etc..) who are allowed to pick-up/drop-off cargo handover rights using TVM in a specific community/station (tenant). This list will provide a universal identification method & value for every capacity booker which can be used to identify organizations between the two integrating systems.",
+        "tags": [
+          "CapacityBookers"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/v1/connect/identification/capacity-suppliers": {
+      "get": {
+        "description": "Provide a list of capacity suppliers to be used in the digital right creation",
+        "tags": [
+          "CapacitySuppliers"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/v1/connect/lookups/digital-right-states": {
+      "get": {
+        "description": "Provide a list of digital right state and their corresponding name.",
+        "tags": [
+          "Lookup"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 22,
+                    "name": "Expected"
+                  },
+                  {
+                    "id": 23,
+                    "name": "Temporarily blocked"
+                  },
+                  {
+                    "id": 24,
+                    "name": "Available for handover"
+                  },
+                  {
+                    "id": 25,
+                    "name": "Unavailable/void"
+                  },
+                  {
+                    "id": 26,
+                    "name": "Handover complete"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/connect/lookups/digital-right-types": {
+      "get": {
+        "description": "Provide a list of digital right type and their corresponding name.",
+        "tags": [
+          "Lookup"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 13,
+                    "name": "Intact Uld"
+                  },
+                  {
+                    "id": 14,
+                    "name": "Loose Cargo"
+                  },
+                  {
+                    "id": 15,
+                    "name": "Pallet Stack"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/connect/lookups/handover-types": {
+      "get": {
+        "description": "Provide a list of digital handover right type and their corresponding name.",
+        "tags": [
+          "Lookup"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": 11,
+                    "name": "Pick-up"
+                  },
+                  {
+                    "id": 12,
+                    "name": "Delivery"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Common.Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Organisations.Responses.OrganisationWithIdentificationCodesResponse": {
+        "type": "object",
+        "properties": {
+          "nallianId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "identificationCodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Organisations.Subclasses.IdentificationCode"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Organisations.Subclasses.IdentificationCode": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.Actors.Request.ActorRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "iataNumericCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "nallianId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.AirShipments.Requests.AirShipmentRequest": {
+        "type": "object",
+        "properties": {
+          "shipmentReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "flights": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Flights.Requests.FlightRequest"
+            },
+            "nullable": true
+          },
+          "volume": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "sphs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "pieces": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "extraInformation": {
+            "$ref": "#/components/schemas/Public.AirShipments.Requests.ExtraInformationRequest"
+          },
+          "mawb": {
+            "$ref": "#/components/schemas/Public.Mawbs.Requests.MawbRequest"
+          },
+          "hawbs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Hawbs.Requests.HawbRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.AirShipments.Requests.ExtraInformationRequest": {
+        "type": "object",
+        "properties": {
+          "chargesPayed": {
+            "type": "boolean"
+          },
+          "customsReleased": {
+            "type": "boolean"
+          },
+          "readyForRelease": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.Flights.Requests.FlightRequest": {
+        "required": [
+          "flightNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "sta": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "std": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "flightNumber": {
+            "type": "string"
+          },
+          "destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          },
+          "carrier": {
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.Hawbs.Requests.HawbRequest": {
+        "type": "object",
+        "properties": {
+          "hawbNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          },
+          "destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "pieces": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "sphs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.Mawbs.Requests.MawbRequest": {
+        "type": "object",
+        "properties": {
+          "mawbNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "origin": {
+            "type": "string",
+            "nullable": true
+          },
+          "destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "pieces": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "sphs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "agent": {
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.Rights.Requests.CreateRightRequest": {
+        "type": "object",
+        "properties": {
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "rightState": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rightType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "handoverType": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "totalPieces": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalWeight": {
+            "type": "number",
+            "format": "double"
+          },
+          "volume": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "assignee": {
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+          },
+          "capacitySupplier": {
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+          },
+          "airShipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
+            },
+            "nullable": true
+          },
+          "ulds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
+            },
+            "nullable": true
+          },
+          "viewers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.Rights.Requests.UpdateRightRequest": {
+        "type": "object",
+        "properties": {
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "rightState": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPieces": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalWeight": {
+            "type": "number",
+            "format": "double"
+          },
+          "volume": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "viewers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+            },
+            "nullable": true
+          },
+          "airShipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
+            },
+            "nullable": true
+          },
+          "ulds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.Rights.Responses.CreateRightResponse": {
+        "type": "object",
+        "properties": {
+          "rightId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Public.Ulds.Requests.UldRequest": {
+        "type": "object",
+        "properties": {
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "uldSerialNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "prefix": {
+            "type": "string",
+            "nullable": true
+          },
+          "uldCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "uldType": {
+            "type": "string",
+            "nullable": true
+          },
+          "owner": {
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+          },
+          "isPallet": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "CapacityBookers"
+    },
+    {
+      "name": "CapacitySuppliers"
+    },
+    {
+      "name": "DigitalRights"
+    },
+    {
+      "name": "Lookup",
+      "description": "API to retrieve name corresponding with id's"
+    }
+  ]
 }
