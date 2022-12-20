@@ -69,7 +69,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
+                    "$ref": "#/components/schemas/Common.Error"
                   }
                 }
               }
@@ -118,7 +118,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
+                    "$ref": "#/components/schemas/Common.Error"
                   }
                 }
               }
@@ -178,7 +178,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
+                    "$ref": "#/components/schemas/Common.Error"
                   }
                 }
               }
@@ -349,7 +349,7 @@
   },
   "components": {
     "schemas": {
-      "Nallian.Common.Error": {
+      "Common.Error": {
         "type": "object",
         "properties": {
           "code": {
@@ -1633,16 +1633,6 @@
           "api": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Application.Model.Bookings.LinkableBookingConfiguration": {
-        "type": "object",
-        "properties": {
-          "includeUpcomingDays": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
