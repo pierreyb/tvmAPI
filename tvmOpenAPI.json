@@ -13,7 +13,7 @@
       "variable": {
         "community": {
           "enum": ["demo"],
-          default: "demo",
+          "default": "demo",
           "description": "Nallian has multiple domains for every application, specified by the community/tenant."
         }
       }
