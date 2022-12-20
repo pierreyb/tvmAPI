@@ -295,6 +295,7 @@
       },
       "/v1/connect/lookups/digital-right-types":{
          "get":{
+            "description":"Provide a list of digital right type and their corresponding name.",
             "tags":[
                "Lookup"
             ],
@@ -340,6 +341,7 @@
       },
       "/v1/connect/lookups/handover-types":{
          "get":{
+            "description":"Provide a list of digital handover right type and their corresponding name.",
             "tags":[
                "Lookup"
             ],
@@ -351,9 +353,28 @@
                         "schema":{
                            "type":"array",
                            "items":{
-                              "$ref":"#/components/schemas/Public.Lookups.Responses.HandoverTypeResponse"
+                              "type":"object",
+                              "properties":{
+                                 "id":{
+                                    "type":"integer"
+                                 },
+                                 "name":{
+                                    "type":"string",
+                                    "nullable":true
+                                 }
+                              }
                            }
-                        }
+                        },
+                        "example":[
+                           {
+                              "id": 11,
+                              "name": "Pick-up"
+                           },
+                           {
+                              "id": 12,
+                              "name": "Delivery"
+                           }
+                        ]
                      }
                   }
                }
