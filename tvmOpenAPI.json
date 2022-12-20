@@ -1153,24 +1153,6 @@
             },
             "additionalProperties":false
          },
-         "Lookups.Responses.HandoverTypeResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "slug":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
          "Lookups.Responses.SphResponse":{
             "type":"object",
             "properties":{
@@ -1532,24 +1514,6 @@
                   "format":"int32"
                },
                "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Lookups.Responses.HandoverTypeResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "slug":{
                   "type":"string",
                   "nullable":true
                }
