@@ -35,17 +35,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.CreateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.CreateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.CreateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
               }
             }
           }
@@ -56,17 +56,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Responses.CreateRightResponse"
+                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Responses.CreateRightResponse"
+                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Responses.CreateRightResponse"
+                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
                 }
               }
             }
@@ -119,17 +119,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.CreateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.CreateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.CreateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
               }
             }
           }
@@ -140,17 +140,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Responses.CreateRightResponse"
+                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Responses.CreateRightResponse"
+                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Responses.CreateRightResponse"
+                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
                 }
               }
             }
@@ -215,17 +215,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.UpdateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.UpdateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.UpdateRightRequest"
+                "$ref": "#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
               }
             }
           }
@@ -356,7 +356,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.DigitalRightStateResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightStateResponse"
                   }
                 }
               },
@@ -364,7 +364,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.DigitalRightStateResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightStateResponse"
                   }
                 }
               },
@@ -372,7 +372,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.DigitalRightStateResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightStateResponse"
                   }
                 }
               }
@@ -394,7 +394,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.DigitalRightTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightTypeResponse"
                   }
                 }
               },
@@ -402,7 +402,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.DigitalRightTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightTypeResponse"
                   }
                 }
               },
@@ -410,7 +410,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.DigitalRightTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightTypeResponse"
                   }
                 }
               }
@@ -432,7 +432,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.HandoverTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.HandoverTypeResponse"
                   }
                 }
               },
@@ -440,7 +440,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.HandoverTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.HandoverTypeResponse"
                   }
                 }
               },
@@ -448,7 +448,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.HandoverTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.HandoverTypeResponse"
                   }
                 }
               }
@@ -470,7 +470,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.ActorTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.ActorTypeResponse"
                   }
                 }
               },
@@ -478,7 +478,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.ActorTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.ActorTypeResponse"
                   }
                 }
               },
@@ -486,7 +486,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.ActorTypeResponse"
+                    "$ref": "#/components/schemas/Public.Lookups.Responses.ActorTypeResponse"
                   }
                 }
               }
@@ -2071,7 +2071,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Actors.Request.ActorRequest": {
+      "Public.Actors.Request.ActorRequest": {
         "type": "object",
         "properties": {
           "id": {
@@ -2095,7 +2095,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.AirShipments.Requests.AirShipmentRequest": {
+      "Public.AirShipments.Requests.AirShipmentRequest": {
         "type": "object",
         "properties": {
           "shipmentReference": {
@@ -2109,7 +2109,7 @@
           "flights": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Flights.Requests.FlightRequest"
+              "$ref": "#/components/schemas/Public.Flights.Requests.FlightRequest"
             },
             "nullable": true
           },
@@ -2149,22 +2149,22 @@
             "format": "double"
           },
           "extraInformation": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.AirShipments.Requests.ExtraInformationRequest"
+            "$ref": "#/components/schemas/Public.AirShipments.Requests.ExtraInformationRequest"
           },
           "mawb": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Mawbs.Requests.MawbRequest"
+            "$ref": "#/components/schemas/Public.Mawbs.Requests.MawbRequest"
           },
           "hawbs": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Hawbs.Requests.HawbRequest"
+              "$ref": "#/components/schemas/Public.Hawbs.Requests.HawbRequest"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.AirShipments.Requests.ExtraInformationRequest": {
+      "Public.AirShipments.Requests.ExtraInformationRequest": {
         "type": "object",
         "properties": {
           "chargesPayed": {
@@ -2179,7 +2179,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Enums.RoleType": {
+      "Public.Enums.RoleType": {
         "enum": [
           1,
           2,
@@ -2193,7 +2193,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Errors.Responses.ErrorResponse": {
+      "Public.Errors.Responses.ErrorResponse": {
         "type": "object",
         "properties": {
           "code": {
@@ -2207,7 +2207,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Flights.Requests.FlightRequest": {
+      "Public.Flights.Requests.FlightRequest": {
         "required": [
           "flightNumber"
         ],
@@ -2235,12 +2235,12 @@
             "nullable": true
           },
           "carrier": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Actors.Request.ActorRequest"
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
           }
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Hawbs.Requests.HawbRequest": {
+      "Public.Hawbs.Requests.HawbRequest": {
         "type": "object",
         "properties": {
           "hawbNumber": {
@@ -2275,7 +2275,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.ActorTypeResponse": {
+      "Public.Lookups.Responses.ActorTypeResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -2289,7 +2289,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.DigitalRightStateResponse": {
+      "Public.Lookups.Responses.DigitalRightStateResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -2303,7 +2303,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.DigitalRightTypeResponse": {
+      "Public.Lookups.Responses.DigitalRightTypeResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -2317,7 +2317,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Lookups.Responses.HandoverTypeResponse": {
+      "Public.Lookups.Responses.HandoverTypeResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -2335,7 +2335,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Mawbs.Requests.MawbRequest": {
+      "Public.Mawbs.Requests.MawbRequest": {
         "type": "object",
         "properties": {
           "mawbNumber": {
@@ -2372,12 +2372,12 @@
             "nullable": true
           },
           "agent": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Actors.Request.ActorRequest"
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
           }
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.CreateRightRequest": {
+      "Public.Rights.Requests.CreateRightRequest": {
         "type": "object",
         "properties": {
           "externalReference": {
@@ -2434,36 +2434,36 @@
             "nullable": true
           },
           "assignee": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Actors.Request.ActorRequest"
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
           },
           "capacitySupplier": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Actors.Request.ActorRequest"
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
           },
           "airShipments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.AirShipments.Requests.AirShipmentRequest"
+              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
             },
             "nullable": true
           },
           "ulds": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Ulds.Requests.UldRequest"
+              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
             },
             "nullable": true
           },
           "viewers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Actors.Request.ActorRequest"
+              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Rights.Requests.UpdateRightRequest": {
+      "Public.Rights.Requests.UpdateRightRequest": {
         "type": "object",
         "properties": {
           "externalReference": {
@@ -2513,28 +2513,28 @@
           "viewers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Actors.Request.ActorRequest"
+              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
             },
             "nullable": true
           },
           "airShipments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.AirShipments.Requests.AirShipmentRequest"
+              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
             },
             "nullable": true
           },
           "ulds": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Ulds.Requests.UldRequest"
+              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Rights.Responses.CreateRightResponse": {
+      "Public.Rights.Responses.CreateRightResponse": {
         "type": "object",
         "properties": {
           "rightId": {
@@ -2544,7 +2544,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Sdk.Public.Ulds.Requests.UldRequest": {
+      "Public.Ulds.Requests.UldRequest": {
         "type": "object",
         "properties": {
           "externalReference": {
