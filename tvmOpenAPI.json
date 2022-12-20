@@ -199,17 +199,7 @@
                   }
                },
                "403":{
-                  "description":"Forbidden",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "$ref":"#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
-                           }
-                        }
-                     }
-                  }
+                  "description":"Forbidden"
                }
             }
          }
@@ -234,17 +224,7 @@
                   }
                },
                "403":{
-                  "description":"Forbidden",
-                  "content":{
-                     "application/json":{
-                        "schema":{
-                           "type":"array",
-                           "items":{
-                              "$ref":"#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
-                           }
-                        }
-                     }
-                  }
+                  "description":"Forbidden"
                }
             }
          }
