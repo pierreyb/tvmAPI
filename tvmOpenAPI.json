@@ -1,14 +1,28 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Truck Visit Management Api",
+    "title": "Truck Visit Management",
+    "description": "This document contains the functional and technical specifications of the Truck Visit Management API. The API calls are designed to facilitate the Truck Visit Management’s Freight Management scope, which is limited to the Digital Handover Right creation and update process."
     "termsOfService": "https://www.nallian.com/",
     "version": "v1"
   },
   "servers": [
     {
-      "url": "/api/tvm"
+      "url": "https://{community}-prd.nallian.io/api/tvm",
+      "description": "PRD - Production Environment",
+      "variable": {
+        "community": {
+          "enum": ["demo"],
+          default: "demo",
+          "description": "Nallian has multiple domains for every application, specified by the community/tenant."
+        }
+      }
+    },
+    {
+      "url": "https://{community}-stg.nallian.io/api/tvm",
+      "description": "STG - Staging Environment"
     }
+
   ],
   "paths": {
     "/__/authorization/identity": {
