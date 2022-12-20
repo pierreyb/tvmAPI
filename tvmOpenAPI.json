@@ -286,7 +286,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.OrganisationWithIdentificationCodesResponse"
+                    "$ref": "#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
                   }
                 }
               }
@@ -299,7 +299,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.OrganisationWithIdentificationCodesResponse"
+                    "$ref": "#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
                   }
                 }
               }
@@ -321,7 +321,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.OrganisationWithIdentificationCodesResponse"
+                    "$ref": "#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
                   }
                 }
               }
@@ -334,7 +334,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.OrganisationWithIdentificationCodesResponse"
+                    "$ref": "#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
                   }
                 }
               }
@@ -519,282 +519,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.StoredGridView.Abstractions.Models.CreateGridView": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "definition": {
-            "type": "string",
-            "nullable": true
-          },
-          "isDefault": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.StoredGridView.Abstractions.Models.GridView": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "createdOn": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedOn": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "definition": {
-            "type": "string",
-            "nullable": true
-          },
-          "resource": {
-            "type": "string",
-            "nullable": true
-          },
-          "organisation": {
-            "type": "boolean"
-          },
-          "organisationId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "userId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "isDefault": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Abstractions.Bookings.Responses.BookingDetailResponse": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "isLinkable": {
-            "type": "boolean"
-          },
-          "bookerOrganisationId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "providerOrganisationId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "start": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "end": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "bookingState": {
-            "type": "string",
-            "nullable": true
-          },
-          "locationId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "locationName": {
-            "type": "string",
-            "nullable": true
-          },
-          "bookingsReference": {
-            "type": "string",
-            "nullable": true
-          },
-          "canBeLinkedUntil": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "isCancelled": {
-            "type": "boolean"
-          },
-          "cancelledDateTime": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Abstractions.DelegationRelations.Enums.DelegationType": {
-        "enum": [
-          1,
-          2
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "Nallian.TruckVisitManagement.Abstractions.DelegationRelations.Requests.CreateDelegationRelationRequest": {
-        "type": "object",
-        "properties": {
-          "from": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "until": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "delegationType": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DelegationRelations.Enums.DelegationType"
-          },
-          "delegatorId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "delegatedHolderId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "handoverTypeId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Abstractions.DelegationRelations.Requests.UpdateDelegationRelationRequest": {
-        "type": "object",
-        "properties": {
-          "from": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "until": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Abstractions.DelegationRelations.Responses.DelegationRelationResponseBase": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "delegationType": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DelegationRelations.Enums.DelegationType"
-          },
-          "from": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "until": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "handoverTypeId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Abstractions.DelegationRelations.Responses.GetDelegationRelationsResponse": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "delegationType": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DelegationRelations.Enums.DelegationType"
-          },
-          "from": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "until": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "handoverTypeId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "delegationRelationType": {
-            "type": "string",
-            "nullable": true
-          },
-          "delegator": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Organisations.Subclasses.OrganisationBase"
-          },
-          "delegatedHolder": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Organisations.Subclasses.OrganisationBase"
-          },
-          "handoverType": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightActionManualArchiveRequest": {
-        "type": "object",
-        "properties": {
-          "enabled": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightArchiveRequest": {
-        "type": "object",
-        "properties": {
-          "digitalRightsIds": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightLinkStatus": {
+      "DigitalRights.Requests.DigitalRightLinkStatus": {
         "enum": [
           0,
           1,
@@ -803,7 +528,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightOverviewRequest": {
+      "DigitalRights.Requests.DigitalRightOverviewRequest": {
         "type": "object",
         "properties": {
           "page": {
@@ -840,7 +565,7 @@
             "nullable": true
           },
           "linkStatus": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightLinkStatus"
+            "$ref": "#/components/schemas/DigitalRights.Requests.DigitalRightLinkStatus"
           },
           "digitalRightStates": {
             "type": "array",
@@ -868,7 +593,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightsDelegateRequest": {
+      "DigitalRights.Requests.DigitalRightsDelegateRequest": {
         "type": "object",
         "properties": {
           "digitalRightsIds": {
@@ -886,7 +611,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightsLinkRequest": {
+      "DigitalRights.Requests.DigitalRightsLinkRequest": {
         "type": "object",
         "properties": {
           "digitalRightsIds": {
@@ -904,7 +629,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightsRefuseRequest": {
+      "DigitalRights.Requests.DigitalRightsRefuseRequest": {
         "type": "object",
         "properties": {
           "digitalRightsIds": {
@@ -918,7 +643,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightsRetractRequest": {
+      "DigitalRights.Requests.DigitalRightsRetractRequest": {
         "type": "object",
         "properties": {
           "digitalRightsIds": {
@@ -932,7 +657,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Requests.DigitalRightsUnlinkRequest": {
+      "DigitalRights.Requests.DigitalRightsUnlinkRequest": {
         "type": "object",
         "properties": {
           "digitalRightsIds": {
@@ -946,7 +671,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Responses.DigitalRightActionMatrixRowResponse": {
+      "DigitalRights.Responses.DigitalRightActionMatrixRowResponse": {
         "type": "object",
         "properties": {
           "canCreateAndUpdate": {
@@ -1011,7 +736,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Responses.DigitalRightActionResponse": {
+      "DigitalRights.Responses.DigitalRightActionResponse": {
         "type": "object",
         "properties": {
           "canCreateAndUpdate": {
@@ -1041,7 +766,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Responses.DigitalRightDetailResponse": {
+      "DigitalRights.Responses.DigitalRightDetailResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1129,19 +854,19 @@
             "type": "boolean"
           },
           "actions": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.DigitalRightActions"
+            "$ref": "#/components/schemas/DigitalRights.Subclasses.DigitalRightActions"
           },
           "shipments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.AirShipmentDetailItem"
+              "$ref": "#/components/schemas/DigitalRights.Subclasses.AirShipmentDetailItem"
             },
             "nullable": true
           },
           "ulds": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.UldDetailItem"
+              "$ref": "#/components/schemas/DigitalRights.Subclasses.UldDetailItem"
             },
             "nullable": true
           },
@@ -1152,7 +877,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Responses.DigitalRightEventResponse": {
+      "DigitalRights.Responses.DigitalRightEventResponse": {
         "type": "object",
         "properties": {
           "digitalRightId": {
@@ -1194,7 +919,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Responses.DigitalRightEventSeverityResponse": {
+      "DigitalRights.Responses.DigitalRightEventSeverityResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1208,7 +933,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Responses.DigitalRightEventTypeResponse": {
+      "DigitalRights.Responses.DigitalRightEventTypeResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1222,7 +947,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Responses.DigitalRightOverviewItemResponse": {
+      "DigitalRights.Responses.DigitalRightOverviewItemResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1310,19 +1035,19 @@
             "type": "boolean"
           },
           "actions": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.DigitalRightActions"
+            "$ref": "#/components/schemas/DigitalRights.Subclasses.DigitalRightActions"
           },
           "shipments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.AirShipmentOverviewItem"
+              "$ref": "#/components/schemas/DigitalRights.Subclasses.AirShipmentOverviewItem"
             },
             "nullable": true
           },
           "ulds": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.UldOverviewItem"
+              "$ref": "#/components/schemas/DigitalRights.Subclasses.UldOverviewItem"
             },
             "nullable": true
           },
@@ -1334,7 +1059,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.AirShipmentDetailItem": {
+      "DigitalRights.Subclasses.AirShipmentDetailItem": {
         "type": "object",
         "properties": {
           "id": {
@@ -1350,12 +1075,12 @@
             "format": "double"
           },
           "mawb": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.MawbDetailItem"
+            "$ref": "#/components/schemas/DigitalRights.Subclasses.MawbDetailItem"
           },
           "sphs": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Lookups.Responses.SphResponse"
+              "$ref": "#/components/schemas/Lookups.Responses.SphResponse"
             },
             "nullable": true
           },
@@ -1390,14 +1115,14 @@
           "hawbs": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.HawbDetailItem"
+              "$ref": "#/components/schemas/DigitalRights.Subclasses.HawbDetailItem"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.AirShipmentOverviewItem": {
+      "DigitalRights.Subclasses.AirShipmentOverviewItem": {
         "type": "object",
         "properties": {
           "id": {
@@ -1415,7 +1140,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.DigitalRightActions": {
+      "DigitalRights.Subclasses.DigitalRightActions": {
         "type": "object",
         "properties": {
           "canLink": {
@@ -1442,7 +1167,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.DigitalRightInputErrorItemResponse": {
+      "DigitalRights.Subclasses.DigitalRightInputErrorItemResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1454,7 +1179,7 @@
             "format": "date-time"
           },
           "fileTypeId": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Enums.FileType"
+            "$ref": "#/components/schemas/Enums.FileType"
           },
           "fileTypeName": {
             "type": "string",
@@ -1464,7 +1189,7 @@
             "type": "boolean"
           },
           "error": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.ErrorDetailsResponse"
+            "$ref": "#/components/schemas/DigitalRights.Subclasses.ErrorDetailsResponse"
           },
           "digitalRightId": {
             "type": "string",
@@ -1479,14 +1204,14 @@
           "groupedInputFiles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.DigitalRightInputErrorItemResponse"
+              "$ref": "#/components/schemas/DigitalRights.Subclasses.DigitalRightInputErrorItemResponse"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.ErrorDetailsResponse": {
+      "DigitalRights.Subclasses.ErrorDetailsResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1500,7 +1225,7 @@
             "type": "boolean"
           },
           "errorType": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Enums.ErrorType"
+            "$ref": "#/components/schemas/Enums.ErrorType"
           },
           "errorTypeCode": {
             "type": "string",
@@ -1513,7 +1238,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.HawbDetailItem": {
+      "DigitalRights.Subclasses.HawbDetailItem": {
         "type": "object",
         "properties": {
           "id": {
@@ -1552,7 +1277,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.MawbDetailItem": {
+      "DigitalRights.Subclasses.MawbDetailItem": {
         "type": "object",
         "properties": {
           "id": {
@@ -1612,7 +1337,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.UldDetailItem": {
+      "DigitalRights.Subclasses.UldDetailItem": {
         "type": "object",
         "properties": {
           "id": {
@@ -1649,7 +1374,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.DigitalRights.Subclasses.UldOverviewItem": {
+      "DigitalRights.Subclasses.UldOverviewItem": {
         "type": "object",
         "properties": {
           "id": {
@@ -1667,7 +1392,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Enums.ErrorType": {
+      "Enums.ErrorType": {
         "enum": [
           1,
           2,
@@ -1689,7 +1414,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "Nallian.TruckVisitManagement.Abstractions.Enums.FileType": {
+      "Enums.FileType": {
         "enum": [
           1,
           2
@@ -1697,7 +1422,7 @@
         "type": "integer",
         "format": "int32"
       },
-      "Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Enums.IdentificationType": {
+      "IdentificationCodes.Enums.IdentificationType": {
         "enum": [
           1,
           2,
@@ -1706,11 +1431,11 @@
         "type": "integer",
         "format": "int32"
       },
-      "Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Requests.CreateIdentificationCodeRequest": {
+      "IdentificationCodes.Requests.CreateIdentificationCodeRequest": {
         "type": "object",
         "properties": {
           "identificationType": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Enums.IdentificationType"
+            "$ref": "#/components/schemas/IdentificationCodes.Enums.IdentificationType"
           },
           "value": {
             "type": "string",
@@ -1723,7 +1448,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Requests.GetIdentificationCodeOverviewRequest": {
+      "IdentificationCodes.Requests.GetIdentificationCodeOverviewRequest": {
         "type": "object",
         "properties": {
           "page": {
@@ -1743,7 +1468,7 @@
             "nullable": true
           },
           "identificationType": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Enums.IdentificationType"
+            "$ref": "#/components/schemas/IdentificationCodes.Enums.IdentificationType"
           },
           "value": {
             "type": "string",
@@ -1752,11 +1477,11 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Requests.UpdateIdentificationCodeRequest": {
+      "IdentificationCodes.Requests.UpdateIdentificationCodeRequest": {
         "type": "object",
         "properties": {
           "identificationType": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Enums.IdentificationType"
+            "$ref": "#/components/schemas/IdentificationCodes.Enums.IdentificationType"
           },
           "value": {
             "type": "string",
@@ -1769,18 +1494,18 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Responses.IdentificationCodeResponse": {
+      "IdentificationCodes.Responses.IdentificationCodeResponse": {
         "type": "object",
         "properties": {
           "identificationType": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.IdentificationCodes.Enums.IdentificationType"
+            "$ref": "#/components/schemas/IdentificationCodes.Enums.IdentificationType"
           },
           "value": {
             "type": "string",
             "nullable": true
           },
           "organisationResponse": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.OrganisationResponse"
+            "$ref": "#/components/schemas/Organisations.Responses.OrganisationResponse"
           },
           "id": {
             "type": "string",
@@ -1789,7 +1514,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Lookups.Responses.ActorTypeResponse": {
+      "Lookups.Responses.ActorTypeResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1803,7 +1528,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Lookups.Responses.DigitalRightStateResponse": {
+      "Lookups.Responses.DigitalRightStateResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1821,7 +1546,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Lookups.Responses.DigitalRightTypeResponse": {
+      "Lookups.Responses.DigitalRightTypeResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1835,7 +1560,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Lookups.Responses.HandoverTypeDirectionResponse": {
+      "Lookups.Responses.HandoverTypeDirectionResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1849,7 +1574,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Lookups.Responses.HandoverTypeResponse": {
+      "Lookups.Responses.HandoverTypeResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1867,7 +1592,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Lookups.Responses.SphResponse": {
+      "Lookups.Responses.SphResponse": {
         "type": "object",
         "properties": {
           "code": {
@@ -1881,7 +1606,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Lookups.Responses.UldTypeResponse": {
+      "Lookups.Responses.UldTypeResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1895,7 +1620,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.GetByDelegateHolderResponse": {
+      "Organisations.Responses.GetByDelegateHolderResponse": {
         "type": "object",
         "properties": {
           "id": {
@@ -1914,7 +1639,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.GetOrganisationsResponse": {
+      "Organisations.Responses.GetOrganisationsResponse": {
         "type": "object",
         "properties": {
           "organisationId": {
@@ -1940,7 +1665,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.OrganisationResponse": {
+      "Organisations.Responses.OrganisationResponse": {
         "type": "object",
         "properties": {
           "organisationId": {
@@ -1954,7 +1679,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Organisations.Responses.OrganisationWithIdentificationCodesResponse": {
+      "Organisations.Responses.OrganisationWithIdentificationCodesResponse": {
         "type": "object",
         "properties": {
           "nallianId": {
@@ -1976,14 +1701,14 @@
           "identificationCodes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Abstractions.Organisations.Subclasses.IdentificationCode"
+              "$ref": "#/components/schemas/Organisations.Subclasses.IdentificationCode"
             },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Organisations.Subclasses.IdentificationCode": {
+      "Organisations.Subclasses.IdentificationCode": {
         "type": "object",
         "properties": {
           "type": {
@@ -1997,7 +1722,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Organisations.Subclasses.OrganisationBase": {
+      "Organisations.Subclasses.OrganisationBase": {
         "type": "object",
         "properties": {
           "id": {
@@ -2016,7 +1741,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Settings.AutoArchivalConfiguration": {
+      "Settings.AutoArchivalConfiguration": {
         "type": "object",
         "properties": {
           "enabled": {
@@ -2029,7 +1754,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Settings.SupportContactConfiguration": {
+      "Settings.SupportContactConfiguration": {
         "type": "object",
         "properties": {
           "level": {
@@ -2051,7 +1776,7 @@
         },
         "additionalProperties": false
       },
-      "Nallian.TruckVisitManagement.Abstractions.Version.VersionResponse": {
+      "Version.VersionResponse": {
         "type": "object",
         "properties": {
           "api": {
