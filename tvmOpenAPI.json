@@ -1253,41 +1253,6 @@
             },
             "additionalProperties":false
          },
-         "Settings.AutoArchivalConfiguration":{
-            "type":"object",
-            "properties":{
-               "enabled":{
-                  "type":"boolean"
-               },
-               "archiveAfterXDays":{
-                  "type":"integer",
-                  "format":"int32"
-               }
-            },
-            "additionalProperties":false
-         },
-         "Settings.SupportContactConfiguration":{
-            "type":"object",
-            "properties":{
-               "level":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "phoneNumber":{
-                  "type":"string",
-                  "nullable":true
-               },
-               "email":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
          "Public.Actors.Request.ActorRequest":{
             "type":"object",
             "properties":{
