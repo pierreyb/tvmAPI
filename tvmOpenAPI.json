@@ -2144,7 +2144,7 @@
             "nullable": true
           },
           "owner": {
-            "$ref": "#/components/schemas/Nallian.TruckVisitManagement.Sdk.Public.Actors.Request.ActorRequest"
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
           },
           "isPallet": {
             "type": "boolean"
