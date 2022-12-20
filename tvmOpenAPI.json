@@ -306,9 +306,32 @@
                         "schema":{
                            "type":"array",
                            "items":{
-                              "$ref":"#/components/schemas/Public.Lookups.Responses.DigitalRightTypeResponse"
+                              "type":"object",
+                              "properties":{
+                                 "id":{
+                                    "type":"integer"
+                                 },
+                                 "name":{
+                                    "type":"string",
+                                    "nullable":true
+                                 }
+                              }
                            }
-                        }
+                        },
+                        "example":[
+                           {
+                              "id": 13,
+                              "name": "Intact Uld"
+                           },
+                           {
+                              "id": 14,
+                              "name": "Loose Cargo"
+                           },
+                           {
+                              "id": 15,
+                              "name": "Pallet Stack"
+                           }
+                        ]
                      }
                   }
                }
@@ -1481,20 +1504,6 @@
             "additionalProperties":false
          },
          "Public.Lookups.Responses.ActorTypeResponse":{
-            "type":"object",
-            "properties":{
-               "id":{
-                  "type":"integer",
-                  "format":"int32"
-               },
-               "name":{
-                  "type":"string",
-                  "nullable":true
-               }
-            },
-            "additionalProperties":false
-         },
-         "Public.Lookups.Responses.DigitalRightTypeResponse":{
             "type":"object",
             "properties":{
                "id":{
