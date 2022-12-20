@@ -12,7 +12,9 @@
       "description": "PRD - Production Environment",
       "variable": {
         "community": {
-          "enum": ["demo"],
+          "enum": [
+            "demo"
+          ],
           "default": "demo",
           "description": "Nallian has multiple domains for every application, specified by the community/tenant."
         }
@@ -23,13 +25,14 @@
       "description": "STG - Staging Environment",
       "variable": {
         "community": {
-          "enum": ["demo"],
+          "enum": [
+            "demo"
+          ],
           "default": "demo",
           "description": "Nallian has multiple domains for every application, specified by the community/tenant."
         }
-      }      
+      }
     }
-
   ],
   "paths": {
     "/v1/connect/digital-rights/pick-up": {
@@ -132,6 +135,12 @@
     },
     "/v1/connect/digital-rights/{digitalRightId}": {
       "put": {
+        "403": {
+          "description": "Forbidden"
+        },
+        "404": {
+          "description": "Message validation error"
+        },
         "description": "The purpose of the “Update Digital Handover Right” call is to change a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM. By updating this D.R., the integrator can indicate a status transition (for example confirm a handover) and/or update the content (for example the underlying cargo objects and their formation).",
         "tags": [
           "DigitalRights"
@@ -172,14 +181,8 @@
                     "$ref": "#/components/schemas/Nallian.Common.Error"
                   }
                 }
-              }              }
+              }
             }
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Message validation error"
           }
         }
       }
@@ -271,7 +274,7 @@
                     "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightStateResponse"
                   }
                 }
-              }              }
+              }
             }
           }
         }
