@@ -260,6 +260,7 @@
     },
     "/v1/connect/lookups/digital-right-states": {
       "get": {
+        "description": "Prodive a list of digital right state and their corresponding name",
         "tags": [
           "Lookup"
         ],
@@ -271,7 +272,16 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightStateResponse"
+                    "type": "object",
+                    "properties": {
+                      "id": {            
+                        "type": "integer"
+                      },          
+                      "name": {            
+                        "type": "string",
+                        "nullable": true          
+                      }        
+                    }
                   }
                 }
               }
@@ -1379,38 +1389,6 @@
         },
         "additionalProperties": false
       },
-      "Lookups.Responses.DigitalRightStateResponse": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "color": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Lookups.Responses.DigitalRightTypeResponse": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "Lookups.Responses.HandoverTypeDirectionResponse": {
         "type": "object",
         "properties": {
@@ -1842,20 +1820,6 @@
         "additionalProperties": false
       },
       "Public.Lookups.Responses.ActorTypeResponse": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Public.Lookups.Responses.DigitalRightStateResponse": {
         "type": "object",
         "properties": {
           "id": {
