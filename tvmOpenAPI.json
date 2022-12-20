@@ -37,16 +37,6 @@
               "schema": {
                 "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
               }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
-              }
             }
           }
         },
@@ -54,17 +44,7 @@
           "202": {
             "description": "Accepted",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
                 }
@@ -74,23 +54,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -121,16 +85,6 @@
               "schema": {
                 "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
               }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
-              }
             }
           }
         },
@@ -138,17 +92,7 @@
           "202": {
             "description": "Accepted",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
                 }
@@ -158,23 +102,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -217,16 +145,6 @@
               "schema": {
                 "$ref": "#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
               }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
-              }
             }
           }
         },
@@ -237,14 +155,6 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
-                  }
-                }
-              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -252,15 +162,7 @@
                     "$ref": "#/components/schemas/Nallian.Common.Error"
                   }
                 }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Nallian.Common.Error"
-                  }
-                }
-              }
+              }              }
             }
           },
           "403": {
@@ -352,14 +254,6 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightStateResponse"
-                  }
-                }
-              },
               "application/json": {
                 "schema": {
                   "type": "array",
@@ -367,15 +261,7 @@
                     "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightStateResponse"
                   }
                 }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightStateResponse"
-                  }
-                }
-              }
+              }              }
             }
           }
         }
@@ -390,23 +276,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightTypeResponse"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.DigitalRightTypeResponse"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -428,23 +298,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.HandoverTypeResponse"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.HandoverTypeResponse"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -466,23 +320,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.ActorTypeResponse"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Public.Lookups.Responses.ActorTypeResponse"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
