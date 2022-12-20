@@ -10,7 +10,7 @@
     {
       "url": "https://{community}-prd.nallian.io/api/tvm",
       "description": "PRD - Production Environment",
-      "variable": {
+      "variables": {
         "community": {
           "enum": [
             "demo"
@@ -23,7 +23,7 @@
     {
       "url": "https://{community}-stg.nallian.io/api/tvm",
       "description": "STG - Staging Environment",
-      "variable": {
+      "variables": {
         "community": {
           "enum": [
             "demo"
