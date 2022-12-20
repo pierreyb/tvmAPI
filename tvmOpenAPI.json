@@ -20,7 +20,14 @@
     },
     {
       "url": "https://{community}-stg.nallian.io/api/tvm",
-      "description": "STG - Staging Environment"
+      "description": "STG - Staging Environment",
+      "variable": {
+        "community": {
+          "enum": ["demo"],
+          "default": "demo",
+          "description": "Nallian has multiple domains for every application, specified by the community/tenant."
+        }
+      }      
     }
 
   ],
