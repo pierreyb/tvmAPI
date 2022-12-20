@@ -13,7 +13,8 @@
          "variables":{
             "community":{
                "enum":[
-                  "tenant1","tenant2"
+                  "tenant1",
+                  "tenant2"
                ],
                "default":"tenant1",
                "description":"Nallian has multiple domains for every application, specified by the community/tenant."
@@ -263,7 +264,29 @@
                                  }
                               }
                            }
-                        }
+                        },
+                        "example":[
+                           {
+                              "id":22,
+                              "name":"Expected"
+                           },
+                           {
+                              "id":23,
+                              "name":"Temporarily blocked"
+                           },
+                           {
+                              "id":24,
+                              "name":"Available for handover"
+                           },
+                           {
+                              "id":25,
+                              "name":"Unavailable/void"
+                           },
+                           {
+                              "id":26,
+                              "name":"Handover complete"
+                           }
+                        ]
                      }
                   }
                }
