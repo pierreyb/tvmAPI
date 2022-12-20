@@ -135,12 +135,6 @@
       },
       "/v1/connect/digital-rights/{digitalRightId}":{
          "put":{
-            "403":{
-               "description":"Forbidden"
-            },
-            "404":{
-               "description":"Message validation error"
-            },
             "description":"The purpose of the “Update Digital Handover Right” call is to change a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM. By updating this D.R., the integrator can indicate a status transition (for example confirm a handover) and/or update the content (for example the underlying cargo objects and their formation).",
             "tags":[
                "DigitalRights"
@@ -183,6 +177,12 @@
                         }
                      }
                   }
+               },
+               "403":{
+                  "description":"Forbidden"
+               },
+               "404":{
+                  "description":"Message validation error"
                }
             }
          }
@@ -263,29 +263,7 @@
                                  }
                               }
                            }
-                        },
-                        "examples":[
-                           {
-                              "id":22,
-                              "name":"Expected"
-                           },
-                           {
-                              "id":23,
-                              "name":"Temporarily blocked"
-                           },
-                           {
-                              "id":24,
-                              "name":"Available for handover"
-                           },
-                           {
-                              "id":25,
-                              "name":"Unavailable/void"
-                           },
-                           {
-                              "id":26,
-                              "name":"Handover complete"
-                           }
-                        ]
+                        }
                      }
                   }
                }
