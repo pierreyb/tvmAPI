@@ -47,7 +47,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
+                "$ref": "#/components/schemas/DigitalRights.Requests.Create"
               }
             }
           }
@@ -58,7 +58,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
+                  "$ref": "#/components/schemas/DigitalRights.Responses.Create"
                 }
               }
             }
@@ -96,7 +96,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.CreateRightRequest"
+                "$ref": "#/components/schemas/DigitalRights.Requests.Create"
               }
             }
           }
@@ -107,7 +107,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Public.Rights.Responses.CreateRightResponse"
+                  "$ref": "#/components/schemas/DigitalRights.Responses.Create"
                 }
               }
             }
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Public.Rights.Requests.UpdateRightRequest"
+                "$ref": "#/components/schemas/DigitalRights.Requests.Update"
               }
             }
           }
@@ -385,6 +385,167 @@
   },
   "components": {
     "schemas": {
+      "DigitalRights.Requests.Create": {
+        "type": "object",
+        "properties": {
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "rightState": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPieces": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalWeight": {
+            "type": "number",
+            "format": "double"
+          },
+          "volume": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "assignee": {
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+          },
+          "capacitySupplier": {
+            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+          },
+          "airShipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
+            },
+            "nullable": true
+          },
+          "ulds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
+            },
+            "nullable": true
+          },
+          "viewers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "a6c7b53cf47b6"
+        }
+      },
+      "DigitalRights.Responses.Create": {
+        "type": "object",
+        "properties": {
+          "rightId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DigitalRights.Requests.Update": {
+        "type": "object",
+        "properties": {
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "rightState": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPieces": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalWeight": {
+            "type": "number",
+            "format": "double"
+          },
+          "volume": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "length": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "width": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "viewers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+            },
+            "nullable": true
+          },
+          "airShipments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
+            },
+            "nullable": true
+          },
+          "ulds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Common.Error": {
         "type": "object",
         "properties": {
@@ -667,173 +828,6 @@
         },
         "additionalProperties": false
       },
-      "Public.Rights.Requests.CreateRightRequest": {
-        "type": "object",
-        "properties": {
-          "externalReference": {
-            "type": "string",
-            "nullable": true
-          },
-          "rightState": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "rightType": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "handoverType": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "totalPieces": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalWeight": {
-            "type": "number",
-            "format": "double"
-          },
-          "volume": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "length": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "height": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "width": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
-          },
-          "assignee": {
-            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
-          },
-          "capacitySupplier": {
-            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
-          },
-          "airShipments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
-            },
-            "nullable": true
-          },
-          "ulds": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
-            },
-            "nullable": true
-          },
-          "viewers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Public.Rights.Requests.UpdateRightRequest": {
-        "type": "object",
-        "properties": {
-          "externalReference": {
-            "type": "string",
-            "nullable": true
-          },
-          "rightState": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPieces": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalWeight": {
-            "type": "number",
-            "format": "double"
-          },
-          "volume": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "length": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "height": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "width": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
-          },
-          "viewers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
-            },
-            "nullable": true
-          },
-          "airShipments": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
-            },
-            "nullable": true
-          },
-          "ulds": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Public.Rights.Responses.CreateRightResponse": {
-        "type": "object",
-        "properties": {
-          "rightId": {
-            "type": "string",
-            "format": "uuid"
-          }
-        },
-        "additionalProperties": false
-      },
       "Public.Ulds.Requests.UldRequest": {
         "type": "object",
         "properties": {
@@ -870,13 +864,15 @@
   },
   "tags": [
     {
-      "name": "DigitalRights"
-    },
-    {
-      "name": "Lookup"
+      "name": "DigitalRights",
+      "description": "endpoints to create/update digital handling right"
     },
     {
       "name": "Organizations"
+    },
+    {
+      "name": "Lookup",
+      "description": "endpoints to retrieve type description"
     }
   ]
 }
