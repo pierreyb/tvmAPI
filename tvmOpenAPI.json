@@ -655,6 +655,7 @@
           },
           "agent": {
             "type": "object",
+            "description": "Forwarder ID. The forwarder ID must be on of the capacity-bookers",
             "properties": {
               "nallianId": {
                 "type": "string",
