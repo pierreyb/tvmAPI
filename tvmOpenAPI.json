@@ -160,9 +160,9 @@
     },
     "/v1/connect/identification/capacity-bookers": {
       "get": {
-        "description": "The purpose of the “Get Capacity Bookers” call is to retrieve a list of identification codes for all known Capacity Bookers (truckers, forwarders, etc..) who are allowed to pick-up/drop-off cargo handover rights using TVM in a specific community/station (tenant). This list will provide a universal identification method & value for every capacity booker which can be used to identify organizations between the two integrating systems.",
+        "description": "The purpose of the “Get Capacity Bookers” call is to retrieve a list of identification codes for all known Capacity Bookers (truckers, forwarders, etc..) who are allowed to pick-up/drop-off cargo handover rights using TVM in a specific community/station (tenant). This list will provide a universal identification method & value for every capacity booker which can be used to identify Organisations between the two integrating systems.",
         "tags": [
-          "Organizations"
+          "Organisations"
         ],
         "responses": {
           "200": {
@@ -172,7 +172,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
+                    "$ref": "#/components/schemas/Organisations"
                   }
                 }
               }
@@ -188,7 +188,7 @@
       "get": {
         "description": "Provide a list of capacity suppliers to be used in the digital right creation",
         "tags": [
-          "Organizations"
+          "Organisations"
         ],
         "responses": {
           "200": {
@@ -198,7 +198,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Organisations.Responses.OrganisationWithIdentificationCodesResponse"
+                    "$ref": "#/components/schemas/Organisations"
                   }
                 }
               }
@@ -410,7 +410,7 @@
         ]
       },
       "DigitalRights.Create": {
-        "allOf":[
+        "allOf": [
           {
             "$ref": "#/components/schemas/DigitalRights"
           },
@@ -500,7 +500,6 @@
           "capacitySupplier"
         ]
       },
-
       "DigitalRights.Responses.Create": {
         "type": "object",
         "properties": {
@@ -582,7 +581,7 @@
         },
         "additionalProperties": false
       },
-      "Organisations.Responses.OrganisationWithIdentificationCodesResponse": {
+      "Organisations": {
         "type": "object",
         "properties": {
           "nallianId": {
@@ -601,19 +600,22 @@
           "identificationCodes": {
             "type": "array",
             "items": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          }
-        }
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "deb25e3ac6e86"
+        }
       },
       "Organisations.Subclasses.IdentificationCode": {
         "type": "object",
@@ -916,7 +918,7 @@
       "description": "endpoints to create/update digital handling right"
     },
     {
-      "name": "Organizations"
+      "name": "Organisations"
     },
     {
       "name": "Lookup",
