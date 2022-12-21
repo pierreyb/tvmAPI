@@ -398,13 +398,6 @@
             "items": {
               "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
             }
-          },
-          "viewers": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
-            }
           }
         },
         "required": [
@@ -597,23 +590,27 @@
             "format": "uuid"
           },
           "name": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "city": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "country": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "identificationCodes": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Organisations.Subclasses.IdentificationCode"
-            },
-            "nullable": true
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+            }
           }
         },
         "additionalProperties": false
