@@ -97,7 +97,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DigitalRights.Responses.Create"
+                  "$ref": "#/components/schemas/DigitalRightsId.Responses"
                 }
               }
             }
@@ -387,6 +387,24 @@
           "width": {
             "type": "number"
           },
+              "assignee": {
+                "type": "object",
+                "properties": {
+                  "nallianId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "capacitySupplier": {
+                "type": "object",
+                "properties": {
+                  "nallianId": {
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
           "airShipments": {
             "type": "array",
             "items": {
@@ -398,7 +416,21 @@
             "items": {
               "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
             }
-          }
+          },
+              "viewers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "nallianId": {
+                      "type": "string",
+                      "format": "uuid"
+                    }
+                  }
+                }
+              }
+
+
         },
         "required": [
           "externalReference",
