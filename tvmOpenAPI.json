@@ -257,7 +257,7 @@
                     "id": 26,
                     "name": "Handover complete"
                   }
-                ]                
+                ]
               }
             }
           }
@@ -498,6 +498,10 @@
       },
       "AirShipments": {
         "type": "object",
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "b344cfe7eebbd"
+        },
         "properties": {
           "shipmentReference": {
             "type": "string"
@@ -559,10 +563,12 @@
             }
           }
         },
-        "additionalProperties": false,
-        "x-stoplight": {
-          "id": "b344cfe7eebbd"
-        }
+        "required": [
+          "shipmentReference",
+          "pieces",
+          "weight",
+          "mawb"
+        ]
       },
       "Flights": {
         "required": [
@@ -595,6 +601,10 @@
       },
       "Hawbs": {
         "type": "object",
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "4b23bc1e557b9"
+        },
         "properties": {
           "hawbNumber": {
             "type": "string"
@@ -618,13 +628,18 @@
             }
           }
         },
-        "additionalProperties": false,
-        "x-stoplight": {
-          "id": "4b23bc1e557b9"
-        }
+        "required": [
+          "hawbNumber",
+          "origin",
+          "destination"
+        ]
       },
       "Mawbs": {
         "type": "object",
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "0b229739bfc2e"
+        },
         "properties": {
           "mawbNumber": {
             "type": "string"
@@ -660,13 +675,19 @@
             }
           }
         },
-        "additionalProperties": false,
-        "x-stoplight": {
-          "id": "0b229739bfc2e"
-        }
+        "required": [
+          "mawbNumber",
+          "origin",
+          "destination",
+          "pieces"
+        ]
       },
       "Ulds": {
         "type": "object",
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "8c27d356f4825"
+        },
         "properties": {
           "externalReference": {
             "type": "string"
@@ -687,10 +708,11 @@
             "type": "boolean"
           }
         },
-        "additionalProperties": false,
-        "x-stoplight": {
-          "id": "8c27d356f4825"
-        }
+        "required": [
+          "uldSerialNumber",
+          "prefix",
+          "uldCode"
+        ]
       }
     },
     "responses": {
