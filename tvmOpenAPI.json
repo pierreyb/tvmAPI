@@ -734,16 +734,15 @@
     },
     "examples": {
       "digital-right-states-response": {
-        "value": 
-          [
-                  {
+        "value": [
+            {
                     "id": 22,
                     "name": "Expected"
-                  },
-                  {
+            },
+            {
                     "id": 23,
                     "name": "Temporarily blocked"
-                  },
+            },
                   {
                     "id": 24,
                     "name": "Available for handover"
@@ -757,6 +756,35 @@
                     "name": "Handover complete"
                   }
         ]
+
+      },
+      "digital-right-type-response": {
+        "value": {
+          "description": "Example shared example",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        }
+      },
+      "digital-handover-type-response": {
+        "value": {
+          "description": "Example shared example",
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        }
       }
     }
   },
