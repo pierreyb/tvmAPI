@@ -192,7 +192,7 @@
       "get": {
         "description": "The purpose of the “Get Capacity Bookers” call is to retrieve a list of identification codes for all known Capacity Bookers (truckers, forwarders, etc..) who are allowed to pick-up/drop-off cargo handover rights using TVM in a specific community/station (tenant). This list will provide a universal identification method & value for every capacity booker which can be used to identify organizations between the two integrating systems.",
         "tags": [
-          "CapacityBookers"
+          "Organizations"
         ],
         "responses": {
           "200": {
@@ -218,7 +218,7 @@
       "get": {
         "description": "Provide a list of capacity suppliers to be used in the digital right creation",
         "tags": [
-          "CapacitySuppliers"
+          "Organizations"
         ],
         "responses": {
           "200": {
@@ -870,17 +870,13 @@
   },
   "tags": [
     {
-      "name": "CapacityBookers"
-    },
-    {
-      "name": "CapacitySuppliers"
-    },
-    {
       "name": "DigitalRights"
     },
     {
-      "name": "Lookup",
-      "description": "API to retrieve name corresponding with id's"
+      "name": "Lookup"
+    },
+    {
+      "name": "Organizations"
     }
   ]
 }
