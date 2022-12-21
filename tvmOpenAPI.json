@@ -58,7 +58,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DigitalRightsId.Responses"
+                  "$ref": "#/components/schemas/DigitalRightsId"
                 }
               }
             }
@@ -97,7 +97,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DigitalRightsId.Responses"
+                  "$ref": "#/components/schemas/DigitalRightsId"
                 }
               }
             }
@@ -408,13 +408,13 @@
           "airShipments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
+              "$ref": "#/components/schemas/AirShipments"
             }
           },
           "ulds": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
+              "$ref": "#/components/schemas/Ulds"
             }
           },
           "viewers": {
@@ -439,7 +439,7 @@
           "capacitySupplier"
         ]
       },
-      "DigitalRightsId.Responses": {
+      "DigitalRightsId": {
         "type": "object",
         "properties": {
           "rightId": {
@@ -449,7 +449,7 @@
         },
         "additionalProperties": false,
         "x-stoplight": {
-          "id": "bf27d463df872"
+          "id": "74035d5add35a"
         }
       },
       "Organisations": {
@@ -488,7 +488,7 @@
           "id": "deb25e3ac6e86"
         }
       },
-      "Public.AirShipments.Requests.AirShipmentRequest": {
+      "AirShipments": {
         "type": "object",
         "properties": {
           "shipmentReference": {
@@ -502,7 +502,7 @@
           "flights": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Public.Flights.Requests.FlightRequest"
+              "$ref": "#/components/schemas/Flights"
             },
             "nullable": true
           },
@@ -542,37 +542,36 @@
             "format": "double"
           },
           "extraInformation": {
-            "$ref": "#/components/schemas/Public.AirShipments.Requests.ExtraInformationRequest"
+            "type": "object",
+            "properties": {
+              "chargesPayed": {
+                "type": "boolean"
+              },
+              "customsReleased": {
+                "type": "boolean"
+              },
+              "readyForRelease": {
+                "type": "boolean"
+              }
+            }
           },
           "mawb": {
-            "$ref": "#/components/schemas/Public.Mawbs.Requests.MawbRequest"
+            "$ref": "#/components/schemas/Mawbs"
           },
           "hawbs": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Public.Hawbs.Requests.HawbRequest"
+              "$ref": "#/components/schemas/Hawbs"
             },
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "b344cfe7eebbd"
+        }
       },
-      "Public.AirShipments.Requests.ExtraInformationRequest": {
-        "type": "object",
-        "properties": {
-          "chargesPayed": {
-            "type": "boolean"
-          },
-          "customsReleased": {
-            "type": "boolean"
-          },
-          "readyForRelease": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Public.Flights.Requests.FlightRequest": {
+      "Flights": {
         "required": [
           "flightNumber"
         ],
@@ -596,9 +595,12 @@
             "type": "string"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "b40f07a51ef5c"
+        }
       },
-      "Public.Hawbs.Requests.HawbRequest": {
+      "Hawbs": {
         "type": "object",
         "properties": {
           "hawbNumber": {
@@ -631,9 +633,12 @@
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "4b23bc1e557b9"
+        }
       },
-      "Public.Mawbs.Requests.MawbRequest": {
+      "Mawbs": {
         "type": "object",
         "properties": {
           "mawbNumber": {
@@ -679,9 +684,12 @@
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "0b229739bfc2e"
+        }
       },
-      "Public.Ulds.Requests.UldRequest": {
+      "Ulds": {
         "type": "object",
         "properties": {
           "externalReference": {
@@ -708,7 +716,10 @@
             "type": "boolean"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "8c27d356f4825"
+        }
       }
     },
     "responses": {
@@ -738,6 +749,33 @@
             }
           }
         }
+      }
+    },
+    "examples": {
+      "digital-right-states-response": {
+        "value": 
+          [
+                  {
+                    "id": 22,
+                    "name": "Expected"
+                  },
+                  {
+                    "id": 23,
+                    "name": "Temporarily blocked"
+                  },
+                  {
+                    "id": 24,
+                    "name": "Available for handover"
+                  },
+                  {
+                    "id": 25,
+                    "name": "Unavailable/void"
+                  },
+                  {
+                    "id": 26,
+                    "name": "Handover complete"
+                  }
+        ]
       }
     }
   },
