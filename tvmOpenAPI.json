@@ -47,7 +47,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DigitalRights.Requests.Create"
+                "$ref": "#/components/schemas/DigitalRights.Create"
               }
             }
           }
