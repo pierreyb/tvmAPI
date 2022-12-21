@@ -732,6 +732,30 @@
           }
         }
       }
+    },
+    "securitySchemes": {
+      "API Key - 1": {
+        "type": "oauth2",
+        "flows": {
+          "password": {
+            "tokenUrl": "https://sts.nallian.io/connect/token",
+            "refreshUrl": "",
+            "scopes": {}
+          }
+        },
+        "description": "PRD - Production Environment"
+      },
+      "API Key - 2": {
+        "type": "oauth2",
+        "flows": {
+          "password": {
+            "tokenUrl": "",
+            "refreshUrl": "https://sts-stg.nallian.io/connect/token",
+            "scopes": {}
+          }
+        },
+        "description": "STG - Staging Environment"
+      }
     }
   },
   "tags": [
