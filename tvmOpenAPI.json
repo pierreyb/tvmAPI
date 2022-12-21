@@ -47,7 +47,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DigitalRights.Create"
+                "$ref": "#/components/schemas/DigitalRights"
               }
             }
           }
@@ -86,7 +86,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DigitalRights.Create"
+                "$ref": "#/components/schemas/DigitalRights"
               }
             }
           }
@@ -387,24 +387,24 @@
           "width": {
             "type": "number"
           },
-              "assignee": {
-                "type": "object",
-                "properties": {
-                  "nallianId": {
-                    "type": "string",
-                    "format": "uuid"
-                  }
-                }
-              },
-              "capacitySupplier": {
-                "type": "object",
-                "properties": {
-                  "nallianId": {
-                    "type": "string",
-                    "format": "uuid"
-                  }
-                }
-              },
+          "assignee": {
+            "type": "object",
+            "properties": {
+              "nallianId": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          "capacitySupplier": {
+            "type": "object",
+            "properties": {
+              "nallianId": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
           "airShipments": {
             "type": "array",
             "items": {
@@ -417,20 +417,18 @@
               "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
             }
           },
-              "viewers": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "nallianId": {
-                      "type": "string",
-                      "format": "uuid"
-                    }
-                  }
+          "viewers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "nallianId": {
+                  "type": "string",
+                  "format": "uuid"
                 }
               }
-
-
+            }
+          }
         },
         "required": [
           "externalReference",
@@ -439,48 +437,6 @@
           "totalWeight",
           "assignee",
           "capacitySupplier"
-        ]
-      },
-      "DigitalRights.Create": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/DigitalRights"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "assignee": {
-                "type": "object",
-                "properties": {
-                  "nallianId": {
-                    "type": "string",
-                    "format": "uuid"
-                  }
-                }
-              },
-              "capacitySupplier": {
-                "type": "object",
-                "properties": {
-                  "nallianId": {
-                    "type": "string",
-                    "format": "uuid"
-                  }
-                }
-              },
-              "viewers": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "nallianId": {
-                      "type": "string",
-                      "format": "uuid"
-                    }
-                  }
-                }
-              }
-            }
-          }
         ]
       },
       "DigitalRightsId.Responses": {
@@ -531,30 +487,6 @@
         "x-stoplight": {
           "id": "deb25e3ac6e86"
         }
-      },
-      "Public.Actors.Request.ActorRequest": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          },
-          "iataNumericCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "nallianId": {
-            "type": "string",
-            "format": "uuid",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "Public.AirShipments.Requests.AirShipmentRequest": {
         "type": "object",
@@ -662,9 +594,6 @@
           },
           "origin": {
             "type": "string"
-          },
-          "carrier": {
-            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
           }
         },
         "additionalProperties": false
@@ -741,7 +670,13 @@
             "nullable": true
           },
           "agent": {
-            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+            "type": "object",
+            "properties": {
+              "nallianId": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
           }
         },
         "additionalProperties": false
@@ -768,9 +703,6 @@
           "uldType": {
             "type": "string",
             "nullable": true
-          },
-          "owner": {
-            "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
           },
           "isPallet": {
             "type": "boolean"
