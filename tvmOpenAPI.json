@@ -236,28 +236,9 @@
                     }
                   }
                 },
-                "example": [
-                  {
-                    "id": 22,
-                    "name": "Expected"
-                  },
-                  {
-                    "id": 23,
-                    "name": "Temporarily blocked"
-                  },
-                  {
-                    "id": 24,
-                    "name": "Available for handover"
-                  },
-                  {
-                    "id": 25,
-                    "name": "Unavailable/void"
-                  },
-                  {
-                    "id": 26,
-                    "name": "Handover complete"
-                  }
-                ]
+                "example": {
+                  "$ref": "#/components/examples/digital-right-states-response"
+                }
               }
             }
           }
