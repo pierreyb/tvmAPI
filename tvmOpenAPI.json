@@ -500,54 +500,40 @@
         "type": "object",
         "properties": {
           "shipmentReference": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "flights": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Flights"
-            },
-            "nullable": true
+            }
           },
           "volume": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "length": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "height": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "width": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "sphs": {
             "type": "array",
             "items": {
               "type": "string"
-            },
-            "nullable": true
+            }
           },
           "pieces": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           },
           "weight": {
-            "type": "number",
-            "format": "double"
+            "type": "number"
           },
           "extraInformation": {
             "type": "object",
@@ -570,8 +556,7 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Hawbs"
-            },
-            "nullable": true
+            }
           }
         },
         "additionalProperties": false,
@@ -612,33 +597,25 @@
         "type": "object",
         "properties": {
           "hawbNumber": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "origin": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "destination": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "pieces": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "type": "integer"
           },
           "weight": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "sphs": {
             "type": "array",
             "items": {
               "type": "string"
-            },
-            "nullable": true
+            }
           }
         },
         "additionalProperties": false,
@@ -650,37 +627,28 @@
         "type": "object",
         "properties": {
           "mawbNumber": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "origin": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "destination": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "externalReference": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "pieces": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "type": "integer"
           },
           "weight": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "sphs": {
             "type": "array",
             "items": {
               "type": "string"
-            },
-            "nullable": true
+            }
           },
           "agent": {
             "type": "object",
@@ -701,24 +669,19 @@
         "type": "object",
         "properties": {
           "externalReference": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "uldSerialNumber": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "prefix": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "uldCode": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "uldType": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "isPallet": {
             "type": "boolean"
