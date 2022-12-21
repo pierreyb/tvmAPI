@@ -424,18 +424,6 @@
             "items": {
               "$ref": "#/components/schemas/Ulds"
             }
-          },
-          "viewers": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "nallianId": {
-                  "type": "string",
-                  "format": "uuid"
-                }
-              }
-            }
           }
         },
         "required": [
