@@ -734,24 +734,18 @@
       }
     },
     "securitySchemes": {
-      "API Key - 1": {
+      "access_token": {
         "type": "oauth2",
         "flows": {
           "password": {
-            "tokenUrl": "https://sts.nallian.io/connect/token",
-            "refreshUrl": "",
-            "scopes": {}
-          }
-        },
-        "description": "PRD - Production Environment"
-      },
-      "API Key - 2": {
-        "type": "oauth2",
-        "flows": {
-          "password": {
-            "tokenUrl": "",
-            "refreshUrl": "https://sts-stg.nallian.io/connect/token",
-            "scopes": {}
+            "scopes": {
+              "grant_type": "The OAuth 2.0 grant type that the connected app requests. The value must be password for this flow",
+              "client_id": "The connected app’s consumer key, which you can find on the connected app’s Manage Connected Apps page or from the connected app’s definition.",
+              "client_secret": "The connected app’s consumer secret, which you can find on the connected app’s Manage Connected Apps page or from the connected app’s definition.",
+              "username": "The username of the user that the connected app is imitating.",
+              "password": "The password of the user that the connected app is imitating."
+            },
+            "tokenUrl": "https://sts-stg.nallian.io/connect/token"
           }
         },
         "description": "STG - Staging Environment"
