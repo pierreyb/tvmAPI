@@ -137,7 +137,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DigitalRights.Requests.Update"
+                "$ref": "#/components/schemas/DigitalRights"
               }
             }
           }
@@ -355,52 +355,122 @@
   },
   "components": {
     "schemas": {
-      "DigitalRights.Requests.Create": {
+      "DigitalRights": {
         "type": "object",
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "a6c7b53cf47b6"
+        },
         "properties": {
           "externalReference": {
             "type": "string",
-            "nullable": true
+            "description": "External reference used to identify the digital righin the external application .External refere must be unique nce "
           },
           "rightState": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           },
           "totalPieces": {
-            "type": "integer",
-            "format": "int32"
+            "type": "integer"
           },
           "totalWeight": {
-            "type": "number",
-            "format": "double"
+            "type": "number"
           },
           "volume": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "length": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "height": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
           "width": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
+            "type": "number"
           },
-          "tags": {
+          "airShipments": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
-            },
-            "nullable": true
+              "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
+            }
+          },
+          "ulds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
+            }
+          },
+          "viewers": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+            }
+          }
+        },
+        "required": [
+          "externalReference",
+          "rightState",
+          "totalPieces",
+          "totalWeight",
+          "assignee",
+          "capacitySupplier"
+        ]
+      },
+      "DigitalRights.Create": {
+        "allOf":[
+          {
+            "$ref": "#/components/schemas/DigitalRights"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "assignee": {
+                "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+              },
+              "capacitySupplier": {
+                "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+              },
+              "viewers": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "DigitalRights.Requests.Create": {
+        "type": "object",
+        "additionalProperties": false,
+        "x-stoplight": {
+          "id": "a6c7b53cf47b6"
+        },
+        "properties": {
+          "externalReference": {
+            "type": "string",
+            "description": "External reference used to identify the digital righin the external application .External refere must be unique nce "
+          },
+          "rightState": {
+            "type": "integer"
+          },
+          "totalPieces": {
+            "type": "integer"
+          },
+          "totalWeight": {
+            "type": "number"
+          },
+          "volume": {
+            "type": "number"
+          },
+          "length": {
+            "type": "number"
+          },
+          "height": {
+            "type": "number"
+          },
+          "width": {
+            "type": "number"
           },
           "assignee": {
             "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
@@ -412,29 +482,32 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Public.AirShipments.Requests.AirShipmentRequest"
-            },
-            "nullable": true
+            }
           },
           "ulds": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Public.Ulds.Requests.UldRequest"
-            },
-            "nullable": true
+            }
           },
           "viewers": {
             "type": "array",
+            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Public.Actors.Request.ActorRequest"
-            },
-            "nullable": true
+            }
           }
         },
-        "additionalProperties": false,
-        "x-stoplight": {
-          "id": "a6c7b53cf47b6"
-        }
+        "required": [
+          "externalReference",
+          "rightState",
+          "totalPieces",
+          "totalWeight",
+          "assignee",
+          "capacitySupplier"
+        ]
       },
+
       "DigitalRights.Responses.Create": {
         "type": "object",
         "properties": {
