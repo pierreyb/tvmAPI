@@ -72,7 +72,12 @@
           "404": {
             "description": "No relation found for provided Actors"
           }
-        }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
       }
     },
     "/v1/connect/digital-rights/drop-off": {
@@ -111,7 +116,12 @@
           "404": {
             "description": "No relation found for provided Actors"
           }
-        }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
       }
     },
     "/v1/connect/digital-rights/{digitalRightId}": {
@@ -155,7 +165,12 @@
           "404": {
             "description": "Message validation error"
           }
-        }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
       }
     },
     "/v1/connect/identification/capacity-bookers": {
@@ -181,7 +196,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
       }
     },
     "/v1/connect/identification/capacity-suppliers": {
@@ -207,7 +227,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
       }
     },
     "/v1/connect/lookups/digital-right-states": {
@@ -261,7 +286,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
       }
     },
     "/v1/connect/lookups/digital-right-types": {
@@ -307,7 +337,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
       }
     },
     "/v1/connect/lookups/handover-types": {
@@ -349,7 +384,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
       }
     }
   },
