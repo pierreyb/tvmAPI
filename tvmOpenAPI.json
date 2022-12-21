@@ -734,7 +734,7 @@
       }
     },
     "securitySchemes": {
-      "access_token": {
+      "oauth2": {
         "type": "oauth2",
         "flows": {
           "password": {
@@ -749,6 +749,10 @@
           }
         },
         "description": "STG - Staging Environment"
+      },
+      "access_token": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
   },
@@ -763,6 +767,11 @@
     {
       "name": "Lookup",
       "description": "endpoints to retrieve type description"
+    }
+  ],
+  "security": [
+    {
+      "access_token": []
     }
   ]
 }
