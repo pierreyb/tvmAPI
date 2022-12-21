@@ -364,31 +364,38 @@
         "properties": {
           "externalReference": {
             "type": "string",
-            "description": "External reference used to identify the digital righin the external application .External refere must be unique nce "
+            "description": "External reference used to identify the digital right in the external application. External reference must be unique."
           },
           "rightState": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Id to represent the state of the digital right. The possible value comes from the dight-right-states lookup API."
           },
           "totalPieces": {
             "type": "integer"
           },
           "totalWeight": {
-            "type": "number"
+            "type": "number",
+            "description": "The total weight. The unit of measurement is assumed to be kg."
           },
           "volume": {
-            "type": "number"
+            "type": "number",
+            "description": "The volume of the shipment or the uld. The unit of measurement is assume to be m³."
           },
           "length": {
-            "type": "number"
+            "type": "number",
+            "description": "The length of the shipment or the uld. The unit of measurement is assume to be m. When the length is present, height and width are mandatory"
           },
           "height": {
-            "type": "number"
+            "type": "number",
+            "description": "The height of the shipment or the uld. The unit of measurement is assume to be m. When the height is present, length and width are mandatory"
           },
           "width": {
-            "type": "number"
+            "type": "number",
+            "description": "The width of the shipment or the uld. The unit of measurement is assume to be m. When the width is present, length and height are mandatory"
           },
           "assignee": {
             "type": "object",
+            "description": "A Digital handling right is always created for an Assignee, who is assigned the (Digital) Right to plan and execute the handover within TVM. The assignee do not change throughout the FM process. As a result, the assignee has (viewing) access throughout the full operation process in TVM.",
             "properties": {
               "nallianId": {
                 "type": "string",
@@ -398,6 +405,7 @@
           },
           "capacitySupplier": {
             "type": "object",
+            "description": "The digital handling right capacity/slot Supplier is the Actor who facilitates the physical handover process and therefore provides the capacity to schedule a visit for this handover within TVM.",
             "properties": {
               "nallianId": {
                 "type": "string",
