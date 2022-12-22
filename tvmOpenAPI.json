@@ -774,7 +774,7 @@
       }
     },
     "securitySchemes": {
-      "oauth2": {
+      "oauth2 Production": {
         "type": "oauth2",
         "flows": {
           "password": {
@@ -785,10 +785,26 @@
               "username": "The username of the user that the connected app is imitating.",
               "password": "The password of the user that the connected app is imitating."
             },
-            "tokenUrl": "https://sts{-stg}.nallian.io/connect/token"
+            "tokenUrl": "https://sts.nallian.io/connect/token"
           }
         },
-        "description": "Request access token"
+        "description": "Request access token (PRD)"
+      },
+      "oauth2 Stage": {
+        "type": "oauth2",
+        "flows": {
+          "password": {
+            "scopes": {
+              "grant_type": "The OAuth 2.0 grant type that the connected app requests. The value must be password for this flow",
+              "client_id": "The connected app’s consumer key, which you can find on the connected app’s Manage Connected Apps page or from the connected app’s definition.",
+              "client_secret": "The connected app’s consumer secret, which you can find on the connected app’s Manage Connected Apps page or from the connected app’s definition.",
+              "username": "The username of the user that the connected app is imitating.",
+              "password": "The password of the user that the connected app is imitating."
+            },
+            "tokenUrl": "https://sts-stg.nallian.io/connect/token"
+          }
+        },
+        "description": "Request access token (STG)"
       },
       "access_token": {
         "type": "http",
