@@ -4,7 +4,7 @@
     "title": "Truck Visit Management",
     "description": "This document contains the functional and technical specifications of the Truck Visit Management API. The API calls are designed to facilitate the Truck Visit Management’s Freight Management scope, which is limited to the Digital Handover Right creation and update process.",
     "termsOfService": "https://www.nallian.com/",
-    "version": "v1"
+    "version": "DEC 2022"
   },
   "servers": [
     {
