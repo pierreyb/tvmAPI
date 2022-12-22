@@ -785,10 +785,10 @@
               "username": "The username of the user that the connected app is imitating.",
               "password": "The password of the user that the connected app is imitating."
             },
-            "tokenUrl": "https://sts-stg.nallian.io/connect/token"
+            "tokenUrl": "https://sts{-stg}.nallian.io/connect/token"
           }
         },
-        "description": "STG - Staging Environment"
+        "description": "Request access token"
       },
       "access_token": {
         "type": "http",
