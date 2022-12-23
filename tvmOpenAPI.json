@@ -822,7 +822,8 @@
       "description": "endpoints to create/update digital handling right"
     },
     {
-      "name": "Organisations"
+      "name": "Organisations",
+      "description": "Endpoint to retrieve nallianId of organisation"
     },
     {
       "name": "Lookup",
