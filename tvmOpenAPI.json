@@ -407,6 +407,10 @@
             "description": "External reference used to identify the digital right in the external application. External reference must be unique."
           },
           "rightState": {
+            "type": "string",
+            "description": "String representing the code of the state. Can be replace by rightStateId."
+          },
+          "rightStateId": {
             "type": "integer",
             "description": "Id to represent the state of the digital right. The possible value comes from the dight-right-states lookup API."
           },
