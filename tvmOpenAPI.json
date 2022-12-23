@@ -409,7 +409,7 @@
           },
           "rightState": {
             "type": "string",
-            "description": "String representing the code of the state. Can be replace by rightStateId.",
+            "description": "String representing the code of the state.",
             "enum": [
               "expected",
               "available",
@@ -418,7 +418,7 @@
           },
           "rightStateId": {
             "type": "integer",
-            "description": "Id to represent the state of the digital right. The possible value comes from the dight-right-states lookup API."
+            "description": "Id to represent the state of the digital right. The possible value comes from the dight-right-states lookup API. rightState properties can be used to send state as a string"
           },
           "totalPieces": {
             "type": "integer"
@@ -478,7 +478,7 @@
         },
         "required": [
           "externalReference",
-          "rightState",
+          "rightStateId",
           "totalPieces",
           "totalWeight",
           "assignee",
