@@ -77,7 +77,8 @@
           {
             "access_token": []
           }
-        ]
+        ],
+        "operationId": ""
       }
     },
     "/v1/connect/digital-rights/drop-off": {
@@ -408,7 +409,12 @@
           },
           "rightState": {
             "type": "string",
-            "description": "String representing the code of the state. Can be replace by rightStateId."
+            "description": "String representing the code of the state. Can be replace by rightStateId.",
+            "enum": [
+              "expected",
+              "available",
+              "complete"
+            ]
           },
           "rightStateId": {
             "type": "integer",
@@ -562,7 +568,9 @@
           "sphs": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 3
             }
           },
           "pieces": {
