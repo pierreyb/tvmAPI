@@ -409,7 +409,7 @@
           },
           "rightState": {
             "type": "string",
-            "description": "String representing the code of the state.",
+            "description": "String representing the code of the state. If rightStateId is present in the request, value from rightStateId override the rigthState",
             "enum": [
               "expected",
               "available",
