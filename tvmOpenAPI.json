@@ -155,7 +155,7 @@
         },
         "responses": {
           "202": {
-            "description": "Accepted. No body"
+            "$ref": "#/components/responses/ProcessingId"
           },
           "400": {
             "$ref": "#/components/responses/CommonError"
@@ -778,6 +778,23 @@
                     "type": "string"
                   },
                   "nullable": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProcessingId": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "format": "uuid",
+              "properties": {
+                "processingId": {
+                  "type": "string",
+                  "format": "uuid"
                 }
               }
             }
