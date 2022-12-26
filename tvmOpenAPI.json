@@ -38,6 +38,8 @@
   "paths": {
     "/v1/connect/digital-rights/pick-up": {
       "post": {
+        "operationId": "",
+        "summary": "Create pickup digital handling right",
         "description": "The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
         "tags": [
           "DigitalRights"
@@ -77,13 +79,12 @@
           {
             "access_token": []
           }
-        ],
-        "operationId": "",
-        "summary": "Create pickup digital handling right"
+        ]
       }
     },
     "/v1/connect/digital-rights/drop-off": {
       "post": {
+        "summary": "Create dropoff digital handling right",
         "description": "The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
         "tags": [
           "DigitalRights"
@@ -128,6 +129,7 @@
     },
     "/v1/connect/digital-rights/{digitalRightId}": {
       "put": {
+        "summary": "Update digital handling right",
         "description": "The purpose of the “Update Digital Handover Right” call is to change a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM. By updating this D.R., the integrator can indicate a status transition (for example confirm a handover) and/or update the content (for example the underlying cargo objects and their formation).",
         "tags": [
           "DigitalRights"
@@ -177,6 +179,7 @@
     },
     "/v1/connect/input-errors/{processingId}": {
       "get": {
+        "summary": "Retrieve processing error",
         "description": "The purpose of the input-error is to retrieve processing errors of the digital right creation/update.",
         "tags": [
           "DigitalRights"
@@ -193,19 +196,9 @@
             }
           }
         ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DigitalRights"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/ProcessingId"
+            "description": "OK"
           },
           "403": {
             "description": "Forbidden"
