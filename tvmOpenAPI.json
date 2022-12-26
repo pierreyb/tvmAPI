@@ -78,7 +78,8 @@
             "access_token": []
           }
         ],
-        "operationId": ""
+        "operationId": "",
+        "summary": "Create pickup digital handling right"
       }
     },
     "/v1/connect/digital-rights/drop-off": {
@@ -165,6 +166,52 @@
           },
           "404": {
             "description": "Message validation error"
+          }
+        },
+        "security": [
+          {
+            "access_token": []
+          }
+        ]
+      }
+    },
+    "/v1/connect/input-errors/{processingId}": {
+      "get": {
+        "description": "The purpose of the input-error is to retrieve processing errors of the digital right creation/update.",
+        "tags": [
+          "DigitalRights"
+        ],
+        "parameters": [
+          {
+            "name": "processingId",
+            "in": "path",
+            "description": "Processing Id of digital right creation/update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DigitalRights"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ProcessingId"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
           }
         },
         "security": [
