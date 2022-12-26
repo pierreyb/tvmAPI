@@ -848,7 +848,7 @@
       }
     },
     "securitySchemes": {
-      "oauth2 Production": {
+      "oauth2_production": {
         "type": "oauth2",
         "flows": {
           "password": {
@@ -864,7 +864,7 @@
         },
         "description": "Request access token (PRD)"
       },
-      "oauth2 Stage": {
+      "oauth2_stage": {
         "type": "oauth2",
         "flows": {
           "password": {
