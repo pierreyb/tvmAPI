@@ -830,7 +830,7 @@
         }
       },
       "ProcessingId": {
-        "description": "Example response",
+        "description": "Processing Id",
         "content": {
           "application/json": {
             "schema": {
