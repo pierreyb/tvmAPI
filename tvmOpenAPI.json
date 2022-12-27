@@ -787,9 +787,6 @@
           "uldCode": {
             "type": "string"
           },
-          "uldType": {
-            "type": "string"
-          },
           "isPallet": {
             "type": "boolean"
           }
