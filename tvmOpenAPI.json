@@ -132,6 +132,14 @@
           {
             "access_token": []
           }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-nallian-principal-id"
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-community-tag"
+          }
         ]
       }
     },
