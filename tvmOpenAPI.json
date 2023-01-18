@@ -160,6 +160,12 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-principal-id"
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ],
         "requestBody": {
@@ -210,6 +216,12 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-principal-id"
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ],
         "responses": {
@@ -259,6 +271,14 @@
           {
             "access_token": []
           }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-nallian-principal-id"
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-community-tag"
+          }
         ]
       }
     },
@@ -290,6 +310,14 @@
         "security": [
           {
             "access_token": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-nallian-principal-id"
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ]
       }
@@ -351,6 +379,14 @@
           {
             "access_token": []
           }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-nallian-principal-id"
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-community-tag"
+          }
         ]
       }
     },
@@ -403,6 +439,14 @@
           {
             "access_token": []
           }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-nallian-principal-id"
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-community-tag"
+          }
         ]
       }
     },
@@ -450,6 +494,14 @@
         "security": [
           {
             "access_token": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/x-nallian-principal-id"
+          },
+          {
+            "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ]
       }
