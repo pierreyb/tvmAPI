@@ -965,7 +965,8 @@
         "required": true,
         "schema": {
           "type": "string"
-        }
+        },
+        "description": "The community tag is usually the same as the tenant url"
       }
     }
   },
