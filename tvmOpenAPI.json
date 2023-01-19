@@ -82,9 +82,6 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
-          },
-          {
             "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ]
@@ -135,9 +132,6 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
-          },
-          {
             "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ]
@@ -160,9 +154,6 @@
               "type": "string",
               "format": "uuid"
             }
-          },
-          {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
           },
           {
             "$ref": "#/components/parameters/x-nallian-community-tag"
@@ -218,9 +209,6 @@
             }
           },
           {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
-          },
-          {
             "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ],
@@ -274,9 +262,6 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
-          },
-          {
             "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ]
@@ -313,9 +298,6 @@
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
-          },
           {
             "$ref": "#/components/parameters/x-nallian-community-tag"
           }
@@ -382,9 +364,6 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
-          },
-          {
             "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ]
@@ -442,9 +421,6 @@
         ],
         "parameters": [
           {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
-          },
-          {
             "$ref": "#/components/parameters/x-nallian-community-tag"
           }
         ]
@@ -497,9 +473,6 @@
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/x-nallian-principal-id"
-          },
           {
             "$ref": "#/components/parameters/x-nallian-community-tag"
           }
@@ -951,14 +924,6 @@
       }
     },
     "parameters": {
-      "x-nallian-principal-id": {
-        "name": "x-nallian-principal-id",
-        "in": "header",
-        "required": true,
-        "schema": {
-          "type": "string"
-        }
-      },
       "x-nallian-community-tag": {
         "name": "x-nallian-community-tag",
         "in": "header",
