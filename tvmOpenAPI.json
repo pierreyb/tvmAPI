@@ -42,14 +42,14 @@
         "summary": "Create pickup digital handling right",
         "description": "The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
         "tags": [
-          "DigitalRights"
+          "DigitalHandlingRights"
         ],
         "requestBody": {
           "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DigitalRights"
+                "$ref": "#/components/schemas/DigitalHandlingRights"
               }
             }
           }
@@ -60,7 +60,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DigitalRightsId"
+                  "$ref": "#/components/schemas/DigitalHandlingRightsId"
                 }
               }
             }
@@ -92,14 +92,14 @@
         "summary": "Create dropoff digital handling right",
         "description": "The purpose of the “Create Digital Handover Right” call is to generate a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM.",
         "tags": [
-          "DigitalRights"
+          "DigitalHandlingRights"
         ],
         "requestBody": {
           "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DigitalRights"
+                "$ref": "#/components/schemas/DigitalHandlingRights"
               }
             }
           }
@@ -110,7 +110,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DigitalRightsId"
+                  "$ref": "#/components/schemas/DigitalHandlingRightsId"
                 }
               }
             }
@@ -142,7 +142,7 @@
         "summary": "Update digital handling right",
         "description": "The purpose of the “Update Digital Handover Right” call is to change a handover right for a (group of) cargo object(s), assigned to a capacity booker and used to schedule a visit for this handover in TVM. By updating this D.R., the integrator can indicate a status transition (for example confirm a handover) and/or update the content (for example the underlying cargo objects and their formation).",
         "tags": [
-          "DigitalRights"
+          "DigitalHandlingRights"
         ],
         "parameters": [
           {
@@ -164,7 +164,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DigitalRights"
+                "$ref": "#/components/schemas/DigitalHandlingRights"
               }
             }
           }
@@ -195,7 +195,7 @@
         "summary": "Retrieve processing error",
         "description": "The purpose of the input-error is to retrieve processing errors of the digital right creation/update.",
         "tags": [
-          "DigitalRights"
+          "DigitalHandlingRights"
         ],
         "parameters": [
           {
@@ -482,7 +482,7 @@
   },
   "components": {
     "schemas": {
-      "DigitalRights": {
+      "DigitalHandlingRights": {
         "type": "object",
         "additionalProperties": false,
         "x-stoplight": {
@@ -569,9 +569,10 @@
           "totalWeight",
           "assignee",
           "capacitySupplier"
-        ]
+        ],
+        "title": ""
       },
-      "DigitalRightsId": {
+      "DigitalHandlingRightsId": {
         "type": "object",
         "properties": {
           "rightId": {
@@ -937,7 +938,7 @@
   },
   "tags": [
     {
-      "name": "DigitalRights",
+      "name": "DigitalHandlingRights",
       "description": "endpoints to create/update digital handling right"
     },
     {
